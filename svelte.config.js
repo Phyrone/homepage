@@ -11,6 +11,8 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
  */
 function provide_adapter() {
 	let target = process.env.BUILD_TARGET;
+	//only relevant for static adapter
+	let precompress = process.env.BUILD_PRECOMPRESS === 'true';
 	switch (target) {
 		case undefined:
 		case 'static':
@@ -18,14 +20,14 @@ function provide_adapter() {
 				assets: 'build',
 				pages: 'build',
 				fallback: '404.html',
-				precompress: true
+				precompress
 			});
 		case 'static-spa':
 			return adapter_static({
 				assets: 'build',
 				pages: 'build',
 				fallback: '200.html',
-				precompress: false
+				precompress
 			});
 		case 'cloudflare':
 			return adapter_cloudflare();
