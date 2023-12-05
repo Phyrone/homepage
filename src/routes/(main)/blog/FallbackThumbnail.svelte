@@ -1,6 +1,3 @@
 <script lang="ts"></script>
 
-<picture>
-
-
-</picture>
+<picture> </picture>

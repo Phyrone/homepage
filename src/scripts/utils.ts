@@ -1,6 +1,6 @@
 import Hls from 'hls.js';
 import type { ManifestLoadedData } from 'hls.js';
-import hls_worker_url from "hls.js/dist/hls.worker?worker&url"
+import hls_worker_url from 'hls.js/dist/hls.worker?worker&url';
 
 export function set_hls_quality(hls: Hls, height: number, now: boolean) {
 	const new_level = hls.levels.findIndex((candidate) => candidate.height === height);

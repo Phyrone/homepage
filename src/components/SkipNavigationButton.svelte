@@ -1,6 +1,15 @@
 <script lang="ts">
-
 </script>
+
+<a
+	class="transition-all duration-500 fixed btn-link z-40"
+	class:skip-button={true}
+	rel="external"
+	data-sveltekit-keepfocus="false"
+	href="#main-content"
+>
+	skip to main content
+</a>
 
 <style lang="sass">
   .skip-button
@@ -14,8 +23,3 @@
 
 
 </style>
-
-<a class="transition-all duration-500 fixed btn-link z-40" class:skip-button={true} rel="external"
-   data-sveltekit-keepfocus="false" href="#main-content">
-  skip to main content
-</a>

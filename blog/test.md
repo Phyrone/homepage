@@ -22,7 +22,6 @@ tags:
 
 ![image_alt](_media/bg_sunset_1_reduced.png)
 
-
 ```kotlin
 print("hello world from kotlin");
 

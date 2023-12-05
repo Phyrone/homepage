@@ -3,7 +3,7 @@ import { extract_metadata, load_blog_content } from '$scripts/blog_prerender_uti
 
 import { error } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async ({  params }) => {
+export const GET: RequestHandler = async ({ params }) => {
 	const { slug } = params;
 	try {
 		const blog_content = await load_blog_content(slug);

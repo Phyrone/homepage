@@ -10,7 +10,9 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	const { slug } = params;
 
 	const md = await (await fetch(`/_data/blog/posts/${slug}.md`)).text();
-	const metadata = await (await fetch(`/_data/blog/posts/${slug}.json`)).json().then((r) => r.metadata);
+	const metadata = await (await fetch(`/_data/blog/posts/${slug}.json`))
+		.json()
+		.then((r) => r.metadata);
 	const ast = await parse_markdown(md);
 	return {
 		slug,
@@ -51,14 +53,17 @@ async function inject(component: any, fetch: FetchType) {
 		component['img_data'] = await fetch(
 			`/_data/blog/media/images/${component.url.substring(7)}.json`
 		).then((a) => a.json());
-	} else if (component.type === 'code' && component.lang === "video" && typeof component.value === 'string') {
+	} else if (
+		component.type === 'code' &&
+		component.lang === 'video' &&
+		typeof component.value === 'string'
+	) {
 		component['config'] = jsYaml.load(component.value);
 		const thumbnail_name = component.config.thumbnail as string | undefined;
 		if (thumbnail_name)
 			component['thumbnail_data'] = await fetch(
 				`/_data/blog/media/images/${thumbnail_name}.json`
 			).then((a) => a.json());
-
 	}
 	if (component.children) {
 		for (const child of component.children) {

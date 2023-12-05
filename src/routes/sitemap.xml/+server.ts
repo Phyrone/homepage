@@ -10,7 +10,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 		lastmodDateOnly: false
 	});
 
-	const date = new Date().toISOString()
+	const date = new Date().toISOString();
 
 	//TODO include image information
 	sitemap.write({

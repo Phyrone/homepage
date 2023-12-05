@@ -4,7 +4,6 @@
 	export let component: any;
 </script>
 
-
 <BlogElement {component}>
 	{#if component.children}
 		{#each component.children as child}

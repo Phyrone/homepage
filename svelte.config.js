@@ -39,7 +39,7 @@ function provide_adapter() {
 		case 'deno':
 			return adapter_deno({
 				out: 'build',
-				precompress: true,
+				precompress: true
 			});
 		default:
 			throw 'unknown target: ' + JSON.stringify(target);
