@@ -17,7 +17,7 @@ export async function load_blog_content(slug: string) {
 }
 
 export function all_post_slugs(): string[] {
-	return  Object.keys(blog_md_files).map((name) => name.substring(6, name.length - 3))
+	return Object.keys(blog_md_files).map((name) => name.substring(6, name.length - 3));
 }
 
 export async function extract_metadata(markdown: string): Promise<any> {
