@@ -1,12 +1,8 @@
 import type { RequestHandler } from './$types';
+import { all_post_slugs } from '$scripts/blog_prerender_utils';
 
 export const GET: RequestHandler = async () => {
-	const posts_imports = import.meta.glob('/blog/*.md', {
-		query: {
-			raw: ''
-		}
-	});
-	const posts = Object.keys(posts_imports).map((name) => name.substring(6, name.length - 3));
+	const posts = all_post_slugs();
 
 	return new Response(JSON.stringify(posts));
 };

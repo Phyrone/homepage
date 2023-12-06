@@ -22,13 +22,6 @@ function provide_adapter() {
 				fallback: '404.html',
 				precompress
 			});
-		case 'static-spa':
-			return adapter_static({
-				assets: 'build',
-				pages: 'build',
-				fallback: '200.html',
-				precompress
-			});
 		case 'cloudflare':
 			return adapter_cloudflare();
 		case 'bun':

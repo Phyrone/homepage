@@ -13,13 +13,11 @@ const blog_md_files = import.meta.glob('/blog/*.md', {
 });
 
 export async function load_blog_content(slug: string) {
-	//import supports async and auto refresh over readFileSync
 	return (await blog_md_files['/blog/' + slug + '.md']()) as string;
-	//return readFileSync('./blog/' + slug + '.md', 'utf-8');
 }
 
 export function all_post_slugs(): string[] {
-	return Object.keys(blog_md_files);
+	return  Object.keys(blog_md_files).map((name) => name.substring(6, name.length - 3))
 }
 
 export async function extract_metadata(markdown: string): Promise<any> {
