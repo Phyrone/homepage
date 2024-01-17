@@ -17,7 +17,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	return {
 		slug,
 		metadata,
-		ast: injected(ast, fetch)
+		ast: await injected(ast, fetch)
 	};
 };
 
