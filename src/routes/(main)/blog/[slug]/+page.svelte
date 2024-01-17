@@ -4,7 +4,7 @@
 	import { dev } from '$app/environment';
 
 	export let data: PageData;
-	$: console.debug("page data", data);
+	$: console.debug('page data', data);
 
 	let blog_content = JSON.parse(data.ast);
 </script>
