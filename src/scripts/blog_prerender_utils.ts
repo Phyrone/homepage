@@ -20,7 +20,7 @@ export function all_post_slugs(): string[] {
 	return Object.keys(blog_md_files).map((name) => name.substring(6, name.length - 3));
 }
 
-export async function extract_metadata(markdown: string): Promise<any> {
+export async function extract_metadata(markdown: string): Promise<unknown> {
 	const vfile: VFile = await unified()
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore

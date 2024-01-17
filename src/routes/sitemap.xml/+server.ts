@@ -2,7 +2,7 @@ import type { RequestHandler } from './$types';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
 export const prerender = true;
-export const trailingSlash = 'none';
+export const trailingSlash = 'never';
 export const GET: RequestHandler = async ({ fetch }) => {
 	const all_posts: string[] = await fetch('_data/blog/all-posts.json').then((r) => r.json());
 	const sitemap = new SitemapStream({
