@@ -16,6 +16,6 @@ export const GET: RequestHandler = async ({ params }) => {
 		);
 	} catch (e) {
 		console.error('parser error', e);
-		throw error(500);
+		error(500);
 	}
 };

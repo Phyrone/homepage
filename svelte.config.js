@@ -2,7 +2,7 @@ import adapter_static from '@sveltejs/adapter-static';
 import adapter_cloudflare from '@sveltejs/adapter-cloudflare';
 import adapter_bun from 'svelte-adapter-bun';
 import adapter_deno from 'svelte-adapter-deno';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /**
  *

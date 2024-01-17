@@ -11,6 +11,6 @@ export const GET: RequestHandler = async ({ params }) => {
 		return new Response(blog_content);
 	} catch (e) {
 		console.error('parser error', e);
-		throw error(500);
+		error(500);
 	}
 };
