@@ -7,5 +7,5 @@ export const GET: RequestHandler = async ({ params }) => {
 	// @ts-ignore
 	const file_data = images[params.file];
 	if (file_data) return new Response(JSON.stringify(file_data));
-	else throw error(404);
+	else error(404);
 };
