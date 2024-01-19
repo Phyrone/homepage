@@ -21,6 +21,7 @@
 			class:nbb-sm={true}
 			class:nbb={!transparent}
 			class:nbb-transparent={transparent}
+			aria-label="Youtube Channel"
 			href="https://www.youtube.com/@phyrone"
 			rel="external"
 		>
@@ -30,12 +31,13 @@
 			class:nbb-lg={true}
 			class:nbb={!transparent}
 			class:nbb-transparent={transparent}
-			href="/blog/">Blog</a
-		>
+			aria-label="Blog"
+			href="/blog/">Blog</a>
 		<a
 			class:nbb-sm={true}
 			class:nbb={!transparent}
 			class:nbb-transparent={transparent}
+			aria-label="Join Discord Server"
 			href="https://discord.gg/rb3qeBj4Fv"
 			rel="external"
 		>
@@ -45,6 +47,7 @@
 			class:nbb-sm={true}
 			class:nbb={!transparent}
 			class:nbb-transparent={transparent}
+			aria-label="Github Profile"
 			href="https://github.com/Phyrone"
 			rel="external"
 		>
