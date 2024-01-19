@@ -44,8 +44,7 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vite-imagetools": "^6.2.9",
-    "vitest": "^1.2.0",
-    "yarn-upgrade-all": "^0.7.2"
+    "vitest": "^1.2.0"
   },
   "type": "module",
   "dependencies": {
