@@ -19,6 +19,7 @@
   "devDependencies": {
     "@playwright/test": "^1.41.0",
     "@sveltejs/adapter-auto": "^3.1.0",
+    "@sveltejs/adapter-node": "^4.0.0",
     "@sveltejs/adapter-static": "^3.0.1",
     "@sveltejs/kit": "^2.3.3",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
@@ -50,7 +51,14 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "@sveltejs/adapter-cloudflare": "^3.0.0",
+    "@theatre/core": "^0.7.0",
+    "@theatre/studio": "^0.7.0",
+    "@threlte/core": "^7.1.0",
+    "@threlte/extras": "^8.8.0",
+    "@threlte/flex": "^1.0.1",
+    "@threlte/theatre": "^2.1.6",
     "@types/marked": "^6.0.0",
+    "@types/three": "^0.161.2",
     "daisyui": "^4.6.0",
     "highlight.js": "^11.9.0",
     "js-yaml": "^4.1.0",

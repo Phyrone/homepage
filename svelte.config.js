@@ -2,6 +2,7 @@ import adapter_static from '@sveltejs/adapter-static';
 import adapter_cloudflare from '@sveltejs/adapter-cloudflare';
 import adapter_bun from 'svelte-adapter-bun';
 import adapter_deno from 'svelte-adapter-deno';
+import adapter_node from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /**
@@ -31,6 +32,11 @@ function provide_adapter() {
 				assets: true,
 				dynamic_origin: false
 			});
+		case 'node':
+			return adapter_node({
+				out: 'build',
+				precompress: true
+			});
 		case 'deno':
 			return adapter_deno({
 				out: 'build',
@@ -46,7 +52,9 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
-
+	ssr: {
+		noExternal: ['three']
+	},
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.

@@ -10,7 +10,7 @@
 	<PageHead />
 
 	<main
-		class="flex-auto rounded-md mx-auto overflow-hidden w-full shadow-2xl flex flex-col"
+		class="flex-auto rounded-md mx-auto overflow-hidden w-full shadow-2xl flex flex-col min-h-full"
 		id="main-content"
 	>
 		<slot />
