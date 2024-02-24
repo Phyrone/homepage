@@ -1,16 +1,39 @@
 <script lang="ts">
-	import { T, useTask } from '@threlte/core';
+  import { T, useTask } from "@threlte/core";
+  import { OrbitControls } from "@threlte/extras";
 
-	let rotation = 0;
-	// useTask is relying on a context provided
-	// by <Canvas>. Because we are definitely *inside*
-	// <Canvas>, we can safely use it.
-	useTask((delta) => {
-		rotation += delta;
-	});
+  export let rotation = 0;
+  export let rotate = false;
+  export let controll = false;
+
+  // useTask is relying on a context provided
+  // by <Canvas>. Because we are definitely *inside*
+  // <Canvas>, we can safely use it.
+  useTask((delta) => {
+    if (rotate) {
+      rotation += delta;
+    }
+  });
+
 </script>
 
-<T.Mesh rotation.y={rotation} rotation.x={rotation}>
-	<T.BoxGeometry />
-	<T.MeshBasicMaterial color="red" />
+
+<T.PerspectiveCamera
+  makeDefault
+  position={[2, 2, 2]}
+  on:create={({ ref }) => {
+    ref.lookAt(0, 0, 0)
+  }}
+>
+  {#if controll}
+    <OrbitControls />
+  {/if}
+</T.PerspectiveCamera>
+
+<T.AmbientLight color={0xFFFFFF} intensity={1.2} />
+<T.DirectionalLight position={[0, 10, 10]} castShadow />
+
+<T.Mesh rotation.x={rotation} rotation.y={rotation} rotation.z={rotation}>
+  <T.BoxGeometry />
+  <T.MeshStandardMaterial color={0x0E7277} />
 </T.Mesh>
