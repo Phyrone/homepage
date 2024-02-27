@@ -61,7 +61,7 @@
     >C</kbd>
   </div>
   <div class="flex-auto">
-    Reset Camera:
+    Reset Rotation:
     <kbd
       class="kbd"
       class:bg-primary={pressed_keys.includes("KeyR")}
