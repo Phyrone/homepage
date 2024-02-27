@@ -1,6 +1,7 @@
 <script lang="ts">
   import { T, useTask } from "@threlte/core";
-  import { OrbitControls } from "@threlte/extras";
+
+  let OrbitControlsPromise = import("@threlte/extras").then((mod) => mod.OrbitControls);
 
   export let rotation = 0;
   export let rotate = false;
@@ -26,7 +27,11 @@
   }}
 >
   {#if controll}
-    <OrbitControls />
+    {#await OrbitControlsPromise}
+      <!-- do nothing -->
+    {:then OrbitControls}
+      <OrbitControls />
+    {/await}
   {/if}
 </T.PerspectiveCamera>
 
