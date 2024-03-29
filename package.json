@@ -58,7 +58,7 @@
     "@threlte/flex": "^1.0.1",
     "@threlte/theatre": "^2.1.6",
     "@types/marked": "^6.0.0",
-    "@types/three": "^0.162.0",
+    "@types/three": "^0.163.0",
     "daisyui": "^4.6.0",
     "highlight.js": "^11.9.0",
     "js-yaml": "^4.1.0",
