@@ -2,13 +2,13 @@
 </script>
 
 <a
-	class="transition-all duration-500 fixed btn-link z-40"
-	class:skip-button={true}
-	rel="external"
-	data-sveltekit-keepfocus="false"
-	href="#main-content"
+  class="btn-link fixed z-40 transition-all duration-500"
+  class:skip-button={true}
+  rel="external"
+  data-sveltekit-keepfocus="false"
+  href="#main-content"
 >
-	skip to main content
+  skip to main content
 </a>
 
 <style lang="sass">

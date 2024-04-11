@@ -48,3 +48,12 @@ voluptas voluptas necessitatibus nemo amet dicta dolor. Totam maxime molestias a
 mollitia quis tempora corporis.
 
 ![mountains](_media/mountains.png)
+
+```mermaid
+graph TD
+;
+    A --> B;
+    A --> C;
+    B --> D;
+    C --> D;
+```

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import '$styles/main.scss';
-	import { navigating } from '$app/stores';
-	import Navigatingindicator from './Navigatingindicator.svelte';
+  import '$styles/main.scss';
+  import { navigating } from '$app/stores';
+  import Navigatingindicator from './Navigatingindicator.svelte';
 </script>
 
 {#if $navigating}
-	<Navigatingindicator />
+  <Navigatingindicator />
 {/if}
 
 <slot />

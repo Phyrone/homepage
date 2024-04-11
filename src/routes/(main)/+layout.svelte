@@ -1,7 +1,7 @@
 <script>
-	import MainLayout from './MainLayout.svelte';
+  import MainLayout from './MainLayout.svelte';
 </script>
 
 <MainLayout>
-	<slot />
+  <slot />
 </MainLayout>
