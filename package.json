@@ -5,12 +5,11 @@
 	"main": "index.js",
 	"author": "Phyrone <phyrone@phyrone.de>",
 	"license": "EUPL-1.2",
-	"packageManager": "yarn@1.22.22",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite build && vite preview",
-		"test": "yarn run test:e2e && yarn run test:unit",
+		"test": "bun run test:e2e && bun run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",

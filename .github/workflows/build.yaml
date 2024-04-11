@@ -1,5 +1,5 @@
 on:
-  push: {}
+  push: { }
   pull_request:
     branches-ignore:
       - renovate/**
@@ -11,24 +11,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
           node-version: lts/*
-          cache: 'yarn'
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: "bun-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}"
+          restore-keys: |
+            bun-${{ runner.os }}-
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: bun install --frozen-lockfile
       - name: Check
         continue-on-error: true
-        run: yarn run check
+        run: bun run check
       - name: Lint
         continue-on-error: true
-        run: yarn run lint
+        run: bun run lint
       - name: Build
-        run: yarn run build
+        run: bun run build
       - name: Unit Tests
-        run: yarn run test:unit --run
+        run: bun run test:unit --run
       - name: Install Playwright
-        run: yarn playwright install --with-deps
+        run: bun playwright install --with-deps
       - name: E2E Tests
-        run: yarn run test:e2e
+        run: bun run test:e2e
