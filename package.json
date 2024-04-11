@@ -2,18 +2,21 @@
   "name": "homepage",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "yarn@4.1.1",
+  "main": "index.js",
+  "author": "Phyrone <phyrone@phyrone.de>",
+  "license": "EUPL-1.2",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite build && vite preview",
-    "test": "bun run test:integration && bun run test:unit",
+    "test": "yarn run test:integration && yarn run test:unit",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
     "test:integration": "playwright test",
     "test:unit": "vitest",
-    "update": "bun update",
     "migrate": "svelte-migrate"
   },
   "devDependencies": {
