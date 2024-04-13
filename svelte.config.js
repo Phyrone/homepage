@@ -4,6 +4,7 @@ import adapter_bun from 'svelte-adapter-bun';
 import adapter_deno from 'svelte-adapter-deno';
 import adapter_node from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { mdsvex } from 'mdsvex';
 
 /**
  *
@@ -47,11 +48,11 @@ function provide_adapter() {
   }
 }
 
-/** @type {import("@sveltejs/kit").Config} */
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: vitePreprocess(),
+  preprocess: [vitePreprocess()],
   ssr: {
     noExternal: ['three'],
   },

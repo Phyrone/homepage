@@ -1,16 +1,8 @@
 <script lang="ts">
+  import type { ImageData } from '$scripts/types';
+
   export let alt: string;
-  export let img_data: {
-    preview: string;
-    preload_sets: number[];
-    srcsets: {
-      set: string;
-      type: string;
-    }[];
-    metadata: {
-      src: string;
-    };
-  };
+  export let img_data: ImageData;
   let src: string;
   $: src = img_data.metadata.src;
 
@@ -28,7 +20,7 @@
 <div class="relative h-full w-full overflow-hidden">
   <img
     src={img_data.preview}
-    alt={'preview' + (alt ?? 'no-description')}
+    alt={alt ?? 'no-description'}
     class="h-full w-full blur"
     width="100%"
     height="100%"
