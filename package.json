@@ -59,6 +59,7 @@
   "type": "module",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
+    "@pgrabovets/json-view": "^2.7.5",
     "@sveltejs/adapter-cloudflare": "^4.0.0",
     "@theatre/core": "^0.7.0",
     "@theatre/studio": "^0.7.0",
@@ -68,6 +69,7 @@
     "@threlte/theatre": "^2.1.6",
     "@types/marked": "^6.0.0",
     "@types/three": "^0.163.0",
+    "@zerodevx/svelte-json-view": "^1.0.9",
     "daisyui": "^4.6.0",
     "highlight.js": "^11.9.0",
     "js-yaml": "^4.1.0",
@@ -80,6 +82,7 @@
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-toc": "^9.0.0",
     "sitemap": "^7.1.1",

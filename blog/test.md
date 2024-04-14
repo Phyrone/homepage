@@ -26,7 +26,6 @@ tags:
 print("hello world from kotlin");
 
 ```
-
 ```java
 class Main{
    public static void main(String[] args){
@@ -34,10 +33,11 @@ class Main{
    }
 }
 ```
-
 ```
 no lang code 123
 ```
+
+$ A \in \mathbb{R}^{n \times n} $
 
 Est in et et deleniti molestias autem ullam. Molestias rerum rem animi voluptatem quisquam. Quisquam eveniet ipsum sit
 voluptas eum corrupti tempore praesentium autem odio ab. Saepe aut autem quia eos qui et. `inline code` Sint minus

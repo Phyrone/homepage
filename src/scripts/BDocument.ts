@@ -7,8 +7,13 @@ import { getFileName } from '$scripts/image_utils';
 import { mp_codec } from '$scripts/utils';
 import { decode } from 'msgpack-lite';
 import remarkFrontmatter from 'remark-frontmatter';
+import remarkMath from 'remark-math';
+import remarkGfm from 'remark-gfm';
 
-const md_parser = remark().use(remarkFrontmatter);
+const md_parser = remark()
+  .use(remarkFrontmatter)
+  .use(remarkMath)
+  .use(remarkGfm);
 
 export async function markdown_to_bdoc(
   markdown: string,
@@ -69,7 +74,7 @@ async function child_nodes_to_document(
 ) {
   return await Promise.all(
     nodes.map((node) => convert_content(document, parent, node, doc_source, fetch)),
-  ).then((bdoc_nodes) => bdoc_nodes.filter((x) => x !== undefined) as DocumentNode[]);
+  ).then((bdoc_nodes) => bdoc_nodes.filter((x) => x !== undefined) as BDocumentNode[]);
 }
 
 async function convert_content(
@@ -78,7 +83,7 @@ async function convert_content(
   node: RootContent | PhrasingContent,
   doc_source: string,
   fetch: FetchFunction,
-): Promise<DocumentNode | undefined> {
+): Promise<BDocumentNode | undefined> {
   switch (node.type) {
     case 'thematicBreak':
       return undefined;
@@ -146,7 +151,7 @@ function read_code_block(
   parent: RootContent | PhrasingContent | undefined,
   node: Code | InlineCode,
   inline?: boolean,
-): DocumentNode {
+): BDocumentNode {
   const lang: string | undefined = 'lang' in node ? node.lang ?? undefined : undefined;
   const code = node.value;
   if (lang === 'mermaid') {
@@ -189,7 +194,7 @@ async function read_image_data(
   node: Image,
   doc_source: string,
   fetch: FetchFunction,
-): Promise<DocumentNode | undefined> {
+): Promise<BDocumentNode | undefined> {
   const file_name = getFileName(node.url, doc_source);
   const data: ImageData = await fetch(`/api/images/${file_name}.bdoc`)
     .then((r) => r.arrayBuffer())
@@ -215,12 +220,13 @@ export type BDocMetadata = {
 
 export type BDocument = {
   meta: BDocMetadata;
-  children: DocumentNode[];
+  children: BDocumentNode[];
 };
 
-export type DocumentNode = {
-  children?: DocumentNode[];
+export type BDocumentNode = {
+  children?: BDocumentNode[];
 } & NodeType;
+
 export type NodeType =
   | TextNode
   | LinkNode
