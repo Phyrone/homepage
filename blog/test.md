@@ -1,5 +1,5 @@
 ---
-thumbnail: pix2.png
+thumbnail: _media/pix2.png
 title: Test Title 123
 authors:
   - Phyrone <phyrone@phyrone.de>

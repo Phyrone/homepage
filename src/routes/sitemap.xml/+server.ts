@@ -1,10 +1,19 @@
 import type { RequestHandler } from './$types';
 import { SitemapStream, streamToPromise } from 'sitemap';
+import { decode } from 'msgpack-lite';
+import { mp_codec } from '$scripts/utils';
+import { all_post_slugs } from '$scripts/blog_prerender_utils';
 
 export const prerender = true;
 export const trailingSlash = 'never';
-export const GET: RequestHandler = async ({ fetch }) => {
-  const all_posts: string[] = await fetch('_data/blog/all-posts.json').then((r) => r.json());
+
+export const GET: RequestHandler = async () => {
+  /*const slugs: string[] = await fetch('/api/posts.bdoc',)
+    .then((res) => res.arrayBuffer())
+    .then((buf) => new Uint8Array(buf))
+    .then((arr) => decode(arr, { codec: mp_codec }));*/
+  const slugs = all_post_slugs();
+
   const sitemap = new SitemapStream({
     hostname: 'https://www.phyrone.de/',
     lastmodDateOnly: false,
@@ -12,7 +21,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 
   const date = new Date().toISOString();
 
-  //TODO include image information
+  //TODO include images information
   sitemap.write({
     url: '/',
     priority: 1.0,
@@ -25,10 +34,10 @@ export const GET: RequestHandler = async ({ fetch }) => {
     changefreq: 'hourly',
     lastmod: date,
   });
-  for (const post of all_posts) {
+  for (const slug of slugs) {
     //include media information
     sitemap.write({
-      url: '/blog/' + post,
+      url: '/blog/' + slug + '/',
       changefreq: 'weekly',
       priority: 1.0,
       lastmod: date,

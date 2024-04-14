@@ -1,1 +1,2 @@
-export const traillingSlash = "never"
+export const prerender = true;
+export const trailingSlash = 'never';

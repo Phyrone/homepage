@@ -1,11 +1,6 @@
 import type { LayoutLoad } from './$types';
 
 export const prerender = true;
-export const trailingSlash = 'ignore';
+export const trailingSlash = 'never';
 
-export const load: LayoutLoad = async ({ fetch }) => {
-  const all: string[] = await fetch('/_data/blog/all-posts.json').then((r) => r.json());
-  return {
-    all_posts: all,
-  };
-};
+export const load: LayoutLoad = async ({ fetch }) => {};

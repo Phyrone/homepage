@@ -23,3 +23,5 @@ export type Srcset = {
   type: string;
   set: string;
 };
+
+export type FetchFunction = typeof fetch;

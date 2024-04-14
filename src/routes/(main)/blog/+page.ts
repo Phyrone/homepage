@@ -1,29 +1,26 @@
 import type { PageLoad } from './$types';
+import { decode } from 'msgpack-lite';
+import { mp_codec } from '$scripts/utils';
+import type { BDocMetadata } from '$scripts/BDocument';
+
+export const trailingSlash = 'always';
 
 export const load: PageLoad = async ({ fetch }) => {
-  const all_post_slugs: string[] = await fetch('/_data/blog/all-posts.json').then((r) => r.json());
-  const all_posts_tasks = all_post_slugs.map((slug) =>
-    fetch(`/_data/blog/posts/${slug}.json`).then((r) =>
-      r.json().then((json) => {
-        return {
-          slug,
-          ...json,
-        };
-      }),
+  const all_post_slugs: string[] = await fetch('/api/posts.bdoc')
+    .then((r) => r.arrayBuffer())
+    .then((r) => new Uint8Array(r))
+    .then((r) => decode(r, { codec: mp_codec }));
+
+  const all_posts = await Promise.all(
+    all_post_slugs.map((slug) =>
+      fetch(`/api/post/${slug}.bmet`)
+        .then((r) => r.arrayBuffer())
+        .then((r) => new Uint8Array(r))
+        .then((r) => decode(r, { codec: mp_codec }) as BDocMetadata),
     ),
   );
-  const all_posts = await Promise.all(all_posts_tasks);
-
-  for (const post of all_posts) {
-    if (post.metadata.thumbnail) {
-      post.thumbnail = await fetch(`/_data/blog/media/images/${post.metadata.thumbnail}.json`).then(
-        (r) => r.json(),
-      );
-    }
-  }
 
   return {
-    slugs: all_post_slugs,
     all_posts,
   };
 };

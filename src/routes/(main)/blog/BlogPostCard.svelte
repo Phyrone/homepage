@@ -1,13 +1,8 @@
 <script lang="ts">
   import LazyImage from '$components/LazyImage.svelte';
+  import type { BDocMetadata } from '$scripts/BDocument';
 
-  export let post: {
-    slug: string;
-    thumbnail: any;
-    metadata?: {
-      title?: string;
-    };
-  };
+  export let post: BDocMetadata;
 </script>
 
 <a
@@ -19,12 +14,12 @@
 "
 >
   <span>
-    {#if post.thumbnail}
-      <LazyImage img_data={post.thumbnail} />
+    {#if post.thumbnail && typeof post.thumbnail === 'object'}
+      <LazyImage alt={post.slug + '-thumbnail'} img_data={post.thumbnail} />
     {/if}
   </span>
 
   <div class="card-body">
-    <span>{post?.metadata?.title}</span>
+    <span>{post?.title}</span>
   </div>
 </a>

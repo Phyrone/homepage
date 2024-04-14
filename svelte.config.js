@@ -69,6 +69,10 @@ const config = {
       $media: './blog/_media',
       $blog: './blog',
     },
+    prerender: {
+      concurrency: 16,
+      crawl: true,
+    },
   },
 };
 

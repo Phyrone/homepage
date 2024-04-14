@@ -1,8 +1,13 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import BlogPostCard from './BlogPostCard.svelte';
+  import { onMount } from 'svelte';
 
   export let data: PageData;
+
+  onMount(() => {
+    console.debug('page-data', data);
+  });
 </script>
 
 <svelte:head>
