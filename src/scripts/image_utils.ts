@@ -1,5 +1,4 @@
 import type { ImageData, ImageMetadata } from '$scripts/types';
-import crypto from 'crypto';
 
 const images: Record<string, ImageData> = {};
 
@@ -142,18 +141,10 @@ for (const file in files_metadata) {
 
 export function getFileName(path: string, relative_from?: string): string {
   path = new URL(path, 'file://' + relative_from ?? '/').pathname;
-  return createShortHash(path);
+  return Buffer.from(path,'utf-8').toString('base64');
 }
 
 export function getImageData(locator: string): ImageData | undefined {
   //console.log('getImageData', locator);
   return images[locator];
-}
-
-function createShortHash(input: string): string {
-  const hash = crypto.createHash('sha256');
-  hash.update(input);
-  const result = hash.digest('hex').substring(0, 8);
-  //console.log(input, ' -> ', result);
-  return result;
 }
