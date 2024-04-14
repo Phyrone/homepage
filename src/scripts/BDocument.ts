@@ -10,10 +10,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 
-const md_parser = remark()
-  .use(remarkFrontmatter)
-  .use(remarkMath)
-  .use(remarkGfm);
+const md_parser = remark().use(remarkFrontmatter).use(remarkMath).use(remarkGfm);
 
 export async function markdown_to_bdoc(
   markdown: string,

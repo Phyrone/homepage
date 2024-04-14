@@ -1,9 +1,9 @@
 <script lang="ts">
-
   import type { HeadingNode } from '$scripts/BDocument';
 
   export let node: HeadingNode;
 </script>
+
 {#if node.depth === 1}
   <h1 class="text-6xl">
     <slot />

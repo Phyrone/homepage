@@ -1,17 +1,11 @@
 import type { RequestHandler } from './$types';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { decode } from 'msgpack-lite';
-import { mp_codec } from '$scripts/utils';
 import { all_post_slugs } from '$scripts/blog_prerender_utils';
 
 export const prerender = true;
 export const trailingSlash = 'never';
 
 export const GET: RequestHandler = async () => {
-  /*const slugs: string[] = await fetch('/api/posts.bdoc',)
-    .then((res) => res.arrayBuffer())
-    .then((buf) => new Uint8Array(buf))
-    .then((arr) => decode(arr, { codec: mp_codec }));*/
   const slugs = all_post_slugs();
 
   const sitemap = new SitemapStream({

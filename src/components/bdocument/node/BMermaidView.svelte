@@ -1,8 +1,7 @@
 <script lang="ts">
   import type { MermaidNode } from '$scripts/BDocument';
 
-  const mermaid_import = import('mermaid')
-    .then((i) => i.default);
+  const mermaid_import = import('mermaid').then((i) => i.default);
 
   export let node: MermaidNode;
 
@@ -10,7 +9,6 @@
     mermaid_import.then((mermaid) => {
       mermaid.init({}, htmlDivElement).then();
     });
-
   }
 </script>
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import type { BDocumentNode } from '$scripts/BDocument';
   import BDocumentChildrenView from '$components/bdocument/BDocumentChildrenView.svelte';
   import BUnknownTypeView from '$components/bdocument/node/BUnknownTypeView.svelte';
@@ -9,7 +8,6 @@
   import BMermaidView from '$components/bdocument/node/BMermaidView.svelte';
 
   export let node: BDocumentNode;
-
 </script>
 
 {#if node.type === 0x00}
@@ -23,28 +21,28 @@
     <BDocumentChildrenView children={node.children} />
   </p>
 {:else if node.type === 0x11}
-  <BDocumentHeadingView {node}>
+  <BDocumentHeadingView node={node}>
     <BDocumentChildrenView children={node.children} />
   </BDocumentHeadingView>
 {:else if node.type === 0x45}
   <div class="my-0.5 overflow-hidden rounded-2xl">
     {#if node.data}
-      <LazyImage alt={node.alt??"no image description"} img_data={node.data} />
+      <LazyImage alt={node.alt ?? 'no image description'} img_data={node.data} />
     {:else}
-      <img src={node.src} alt={node.alt??"no image description"}>
+      <img src={node.src} alt={node.alt ?? 'no image description'} />
     {/if}
   </div>
 {:else if node.type === 0x50}
-  <BDocumentCodeView {node}>
+  <BDocumentCodeView node={node}>
     <BDocumentChildrenView children={node.children} />
   </BDocumentCodeView>
 {:else if node.type === 0x51}
-  <BMermaidView {node} />
+  <BMermaidView node={node} />
 {:else if node.type === 0x7f}
   <!-- eslint-disable svelte/no-at-html-tags -->
   {@html node.html}
 {:else}
-  <BUnknownTypeView {node}>
+  <BUnknownTypeView node={node}>
     <BDocumentChildrenView children={node.children} />
   </BUnknownTypeView>
 {/if}

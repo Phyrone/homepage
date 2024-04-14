@@ -3,6 +3,6 @@
   import type { BDocumentNode } from '$scripts/BDocument';
 
   export let node: BDocumentNode;
-
 </script>
-<JsonView json={node} depth={-1}/>
+
+<JsonView json={node} depth={-1} />

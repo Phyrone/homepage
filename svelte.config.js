@@ -4,7 +4,6 @@ import adapter_bun from 'svelte-adapter-bun';
 import adapter_deno from 'svelte-adapter-deno';
 import adapter_node from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { mdsvex } from 'mdsvex';
 
 /**
  *

@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import type { BDocumentNode } from '$scripts/BDocument';
   import BDocumentNodeView from '$components/bdocument/BDocumentNodeView.svelte';
 
@@ -7,5 +6,5 @@
 </script>
 
 {#each children as node}
-  <BDocumentNodeView {node} />
+  <BDocumentNodeView node={node} />
 {/each}

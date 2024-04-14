@@ -4,13 +4,14 @@
 
   export let node: CodeBlockNode;
 </script>
+
 {#if node.inline}
   <code>
     <!-- eslint-disable svelte/no-at-html-tags -->
     {@html node.formatted}
   </code>
 {:else}
-  <div class="mockup-code px-2 my-0.5">
+  <div class="mockup-code my-0.5 px-2">
     <!-- eslint-disable svelte/no-at-html-tags -->
     {@html node.formatted}
   </div>

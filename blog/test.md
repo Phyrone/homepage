@@ -26,6 +26,7 @@ tags:
 print("hello world from kotlin");
 
 ```
+
 ```java
 class Main{
    public static void main(String[] args){
@@ -33,6 +34,7 @@ class Main{
    }
 }
 ```
+
 ```
 no lang code 123
 ```
