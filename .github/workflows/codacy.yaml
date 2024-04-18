@@ -7,6 +7,22 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      actions: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Codacy Analysis CLI
+        uses: codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          verbose: true
+          upload: true
+          max-allowed-issues: 2147483647
+  codacy-security-cli:
+    name: Codacy Security CLI
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
       security-events: write
       actions: read
     steps:
