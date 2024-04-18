@@ -1,8 +1,13 @@
-<script lang="ts">
+<script>
+  //@ts-ignore
   import src_preview from '$assets/landing_cover.png?format=avif&w=128';
+  //@ts-ignore
   import srcset_avif from '$assets/landing_cover.png?format=avif&w=16;32;64;128;256;512;1024&as=srcset';
+  //@ts-ignore
   import srcset_webp from '$assets/landing_cover.png?format=webp&w=16;32;64;128;256;512;1024&as=srcset';
+  //@ts-ignore
   import srcset_jpeg from '$assets/landing_cover.png?format=jpeg&w=16;32;64;128;256;512;1024&as=srcset';
+  //@ts-ignore
   import src_png from '$assets/landing_cover.png?format=png&w=1024';
 </script>
 
