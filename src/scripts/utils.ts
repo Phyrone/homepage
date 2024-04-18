@@ -14,7 +14,3 @@ export const blog_data_headers = {
   'Content-Type': 'application/octet-stream',
   Vary: 'Accept-Encoding',
 };
-
-
-
-

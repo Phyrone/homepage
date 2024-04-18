@@ -8,12 +8,16 @@
 
   function on_created(htmlDivElement: HTMLPreElement) {
     mermaid_import.then((mermaid) => {
-
-      mermaid.init({
-        theme: 'neutral',
-      }, htmlDivElement).then(() => {
-        rendered = true;
-      });
+      mermaid
+        .init(
+          {
+            theme: 'neutral',
+          },
+          htmlDivElement,
+        )
+        .then(() => {
+          rendered = true;
+        });
     });
   }
 </script>
