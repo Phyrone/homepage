@@ -1,13 +1,15 @@
 import type { RequestHandler } from './$types';
 import { error } from '@sveltejs/kit';
 import { load_blog_post } from '$scripts/blog_prerender_utils';
-import { encode } from 'msgpack-lite';
-import { blog_data_headers, mp_codec } from '$scripts/utils';
+import { blog_data_headers } from '$scripts/utils';
+import write_bin from '$scripts/write_bin';
 
 export const GET: RequestHandler = async ({ params: { slug }, fetch }) => {
   const post = load_blog_post(slug, fetch);
+
+  const encoded = write_bin(await post);
   if (post) {
-    return new Response(encode(await post, { codec: mp_codec }), {
+    return new Response(encoded, {
       headers: {
         ...blog_data_headers,
       },

@@ -5,10 +5,16 @@ export const mp_codec = createCodec({
   uint8array: true,
   safe: true,
   usemap: false,
+  preset: true,
+  binarraybuffer: true,
 });
 
 export const blog_data_headers = {
   'Cache-Control': 'public, max-age=3600',
-  'Content-Type': 'application/msgpack',
+  'Content-Type': 'application/octet-stream',
   Vary: 'Accept-Encoding',
 };
+
+
+
+
