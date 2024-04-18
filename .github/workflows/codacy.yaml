@@ -17,6 +17,7 @@ jobs:
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           verbose: true
+          upload: true
           output: results.sarif
           format: sarif
           gh-code-scanning-compat: true
