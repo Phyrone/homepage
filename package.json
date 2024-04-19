@@ -75,6 +75,7 @@
     "@zerodevx/svelte-json-view": "^1.0.9",
     "base64url": "^3.0.1",
     "daisyui": "^4.6.0",
+    "feed": "^4.2.2",
     "highlight.js": "^11.9.0",
     "js-yaml": "^4.1.0",
     "kuto": "^0.3.6",
@@ -93,6 +94,7 @@
     "sitemap": "^7.1.1",
     "svelte-adapter-bun": "^0.5.1",
     "svelte-eslint-parser": "^0.34.1",
+    "svelte-sonner": "^0.3.22",
     "unified": "^11.0.4",
     "unified-stream": "^3.0.0",
     "vfile": "^6.0.1"

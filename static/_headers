@@ -1,0 +1,3 @@
+/_data/*
+  X-Robots-Tag: noindex
+  Cache-Control: public, no-cache, max-age 15552000, stale-if-error 7776000, must-revalidate, proxy-revalidate, no-transform

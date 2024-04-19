@@ -24,7 +24,11 @@ function provide_adapter() {
         precompress,
       });
     case 'cloudflare':
-      return adapter_cloudflare();
+      return adapter_cloudflare({
+        routes: {
+          exclude: [`/_data/*`],
+        },
+      });
     case 'bun':
       return adapter_bun({
         out: 'build',

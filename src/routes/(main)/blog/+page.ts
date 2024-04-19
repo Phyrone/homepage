@@ -3,11 +3,11 @@ import { decode } from 'msgpack-lite';
 import { mp_codec } from '$scripts/utils';
 import type { BDocMetadata } from '$scripts/BDocument';
 import read_bin from '$scripts/read_bin';
-
+import { DATA_BASE_URL } from '$scripts/consts';
 export const trailingSlash = 'always';
 
 export const load: PageLoad = async ({ fetch }) => {
-  const all_post_slugs: string[] = await fetch('/api/posts.bdoc')
+  const all_post_slugs: string[] = await fetch(`${DATA_BASE_URL}/posts.bdoc`)
     .then((r) => (r.ok ? r : Promise.reject(r)))
     .then((r) => r.arrayBuffer())
     .then((r) => new Uint8Array(r))
@@ -15,11 +15,10 @@ export const load: PageLoad = async ({ fetch }) => {
 
   const all_posts = await Promise.all(
     all_post_slugs.map(async (slug) => {
-      const target_url = `/api/post/${slug}.bmet`;
+      const target_url = `${DATA_BASE_URL}/post/${slug}.bmet`;
       const r = await fetch(target_url);
       const r_1 = await r.arrayBuffer();
       const r_2 = new Uint8Array(r_1);
-      console.debug('bytes', target_url, r_2);
       return read_bin(r_2) as BDocMetadata;
     }),
   );

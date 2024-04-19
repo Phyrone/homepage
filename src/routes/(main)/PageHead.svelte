@@ -32,7 +32,7 @@
       class:nbb={!transparent}
       class:nbb-transparent={transparent}
       aria-label="Blog"
-      href="/blog/">Blog</a
+      href="/blog">Blog</a
     >
     <a
       class:nbb-sm={true}

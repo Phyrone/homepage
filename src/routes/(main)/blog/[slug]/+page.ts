@@ -7,7 +7,7 @@ export const trailingSlash = 'always';
 
 export const load: PageLoad | undefined = async ({ params: { slug }, fetch }) => {
   try {
-    const blog_post = await fetch(`/api/post/${slug}.bdoc`, {})
+    const blog_post = await fetch(`/_data/post/${slug}.bdoc`, {})
       .then((r) => (r.ok ? r : Promise.reject(r)))
       .then((r) => r.arrayBuffer())
       .then((r) => new Uint8Array(r))

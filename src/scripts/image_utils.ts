@@ -1,4 +1,5 @@
 import type { ImageData, ImageMetadata } from '$scripts/types';
+import base64url from 'base64url';
 
 const images: Record<string, ImageData> = {};
 
@@ -141,7 +142,7 @@ for (const file in files_metadata) {
 
 export function getFileName(path: string, relative_from?: string): string {
   path = new URL(path, 'file://' + relative_from ?? '/').pathname;
-  return Buffer.from(path, 'utf-8').toString('base64');
+  return base64url.encode(path);
 }
 
 export function getImageData(locator: string): ImageData | undefined {

@@ -9,6 +9,7 @@ import { decode } from 'msgpack-lite';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
+import { DATA_BASE_URL } from '$scripts/consts';
 
 const md_parser = remark().use(remarkFrontmatter).use(remarkMath).use(remarkGfm);
 
@@ -40,7 +41,7 @@ async function enhance_metadata(
   const thumbnail = document.meta.thumbnail;
   if (thumbnail && typeof thumbnail === 'string') {
     const file_name = getFileName(thumbnail, doc_source);
-    document.meta.thumbnail = await fetch(`/api/images/${file_name}.bdoc`)
+    document.meta.thumbnail = await fetch(`${DATA_BASE_URL}/images/${file_name}.bdoc`)
       .then((r) => r.arrayBuffer())
       .then((r) => new Uint8Array(r))
       .then((r) => decode(r, { codec: mp_codec }));
@@ -193,7 +194,7 @@ async function read_image_data(
   fetch: FetchFunction,
 ): Promise<BDocumentNode | undefined> {
   const file_name = getFileName(node.url, doc_source);
-  const data: ImageData = await fetch(`/api/images/${file_name}.bdoc`)
+  const data: ImageData = await fetch(`${DATA_BASE_URL}/images/${file_name}.bdoc`)
     .then((r) => r.arrayBuffer())
     .then((r) => new Uint8Array(r))
     .then((r) => decode(r, { codec: mp_codec }));

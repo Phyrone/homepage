@@ -1,7 +1,7 @@
 <script lang="ts">
-  import PageHead from '$components/PageHead.svelte';
-  import PageFoot from '$components/PageFoot.svelte';
-  import SkipNavigationButton from '$components/SkipNavigationButton.svelte';
+  import PageHead from './PageHead.svelte';
+  import PageFoot from './PageFoot.svelte';
+  import SkipNavigationButton from './SkipNavigationButton.svelte';
 </script>
 
 <SkipNavigationButton />

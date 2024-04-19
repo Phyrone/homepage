@@ -1,7 +1,7 @@
 <script lang="ts">
   import LandingCover from './LandingCover.svelte';
-  import PageFoot from '$components/PageFoot.svelte';
-  import PageHead from '$components/PageHead.svelte';
+  import PageFoot from './(main)/PageFoot.svelte';
+  import PageHead from './(main)/PageHead.svelte';
 </script>
 
 <svelte:head>
