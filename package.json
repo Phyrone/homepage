@@ -79,7 +79,7 @@
     "highlight.js": "^11.9.0",
     "js-yaml": "^4.1.0",
     "kuto": "^0.3.6",
-    "lucide-svelte": "^0.367.0",
+    "lucide-svelte": "^0.372.0",
     "lz4js": "^0.2.0",
     "mdast": "^3.0.0",
     "mdsvex": "^0.11.0",
