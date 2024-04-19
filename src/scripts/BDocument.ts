@@ -1,6 +1,5 @@
 import { remark } from 'remark';
 import type { Code, Image, InlineCode, PhrasingContent, Root, RootContent } from 'mdast';
-import type { Root as HtmlRoot } from 'hast';
 import jsYaml from 'js-yaml';
 import highlight, { type HighlightResult } from 'highlight.js';
 import type { FetchFunction, ImageData } from '$scripts/types';
@@ -14,11 +13,6 @@ import remarkEmoji from 'remark-emoji';
 import remarkDirective from 'remark-directive';
 import remarkHeadingId from 'remark-heading-id';
 import { DATA_BASE_URL } from '$scripts/consts';
-import { rehype } from 'rehype';
-import rehypeStringify from 'rehype-stringify';
-import minifyHtml from 'rehype-preset-minify';
-
-const embedded_html_parser = rehype().use(minifyHtml).use(rehypeStringify);
 
 const md_parser = remark()
   .use(remarkFrontmatter)
@@ -117,7 +111,7 @@ async function convert_content(
     case 'html':
       return {
         type: 0x7f,
-        html: await process_embedded_html(node.value),
+        html: node.value,
       };
     case 'paragraph':
       return {
@@ -158,12 +152,6 @@ async function convert_content(
   }
 
   return undefined;
-}
-
-async function process_embedded_html(html: string): Promise<string> {
-  const parsed_html = embedded_html_parser.parse(html);
-  const processed_html = (await embedded_html_parser.run(parsed_html)) as HtmlRoot;
-  return embedded_html_parser.stringify(processed_html);
 }
 
 function read_code_block(
