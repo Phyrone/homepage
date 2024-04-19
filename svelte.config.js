@@ -28,7 +28,7 @@ function provide_adapter() {
     case 'cloudflare':
       return adapter_cloudflare({
         routes: {
-          exclude: ['<all>', '/_data/*'],
+          exclude: ['<all>'],
         },
       });
     case 'bun':
