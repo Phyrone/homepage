@@ -8,17 +8,19 @@ tags:
   - test
 ---
 
-# H1
+# H1 {#header1}
 
-## H2
+## H2 {#header1}
 
-### H3
+### H3 {#header1}
 
-#### H4
+#### H4 {#header1}
 
-##### H5
+##### H5 {#header1}
 
-###### H6
+###### H6 {#header1}
+
+Emojis in this text will be replaced: :dog: :+1: :smile:
 
 ![image_alt](_media/bg_sunset_1_reduced.png)
 
@@ -59,3 +61,35 @@ graph TD
     B --> D;
     C --> D;
 ```
+
+# GFM
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+| a   | b   |   c |  d  |
+| --- | :-- | --: | :-: |
+
+## Tasklist
+
+- [ ] to do
+- [x] done
+
+## Alters
+
+:::note{#header1 type=alert}
+this is a note
+:::

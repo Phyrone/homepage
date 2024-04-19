@@ -6,16 +6,18 @@ import adapter_node from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /**
- *
- * @param target :string|undefined
  * @return Adapter
  */
 function provide_adapter() {
+  /**
+   * @type {string|undefined}
+   */
   let target = process.env.BUILD_TARGET;
   //only relevant for static adapter
   let precompress = process.env.BUILD_PRECOMPRESS === 'true';
   switch (target) {
     case undefined:
+    case null:
     case 'static':
       return adapter_static({
         assets: 'build',
@@ -26,7 +28,7 @@ function provide_adapter() {
     case 'cloudflare':
       return adapter_cloudflare({
         routes: {
-          exclude: [`/_data/*`],
+          exclude: ['<all>', '/_data/*'],
         },
       });
     case 'bun':
@@ -69,10 +71,10 @@ const config = {
       $styles: './src/styles',
       $scripts: './src/scripts',
       $assets: './src/assets',
-      $media: './blog/_media',
       $blog: './blog',
     },
     prerender: {
+      origin: 'https://www.phyrone.de',
       concurrency: 16,
       crawl: true,
     },

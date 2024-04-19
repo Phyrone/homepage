@@ -22,6 +22,6 @@
   }
 </script>
 
-<pre use:on_created class:opacity-0={!rendered}>
+<pre use:on_created class:invisible={!rendered}>
   {node.diagram}
 </pre>

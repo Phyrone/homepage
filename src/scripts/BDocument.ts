@@ -1,5 +1,6 @@
 import { remark } from 'remark';
 import type { Code, Image, InlineCode, PhrasingContent, Root, RootContent } from 'mdast';
+import type { Root as HtmlRoot } from 'hast';
 import jsYaml from 'js-yaml';
 import highlight, { type HighlightResult } from 'highlight.js';
 import type { FetchFunction, ImageData } from '$scripts/types';
@@ -9,9 +10,23 @@ import { decode } from 'msgpack-lite';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
+import remarkEmoji from 'remark-emoji';
+import remarkDirective from 'remark-directive';
+import remarkHeadingId from 'remark-heading-id';
 import { DATA_BASE_URL } from '$scripts/consts';
+import { rehype } from 'rehype';
+import rehypeStringify from 'rehype-stringify';
+import minifyHtml from 'rehype-preset-minify';
 
-const md_parser = remark().use(remarkFrontmatter).use(remarkMath).use(remarkGfm);
+const embedded_html_parser = rehype().use(minifyHtml).use(rehypeStringify);
+
+const md_parser = remark()
+  .use(remarkFrontmatter)
+  .use(remarkGfm)
+  .use(remarkHeadingId, { defaults: true, uniqueDefaults: true })
+  .use(remarkMath, { singleDollarTextMath: true })
+  .use(remarkDirective)
+  .use(remarkEmoji, { accessible: true, emoticon: false });
 
 export async function markdown_to_bdoc(
   markdown: string,
@@ -26,7 +41,8 @@ export async function markdown_to_bdoc(
     children: [],
   };
   const parsed = md_parser.parse(markdown);
-  await ast_to_bdoc(document, parsed, doc_source, fetch);
+  const processed = await md_parser.run(parsed);
+  await ast_to_bdoc(document, processed, doc_source, fetch);
   await enhance_metadata(document, doc_source, fetch);
   //TODO allow slug to be set in frontmatter
   document.meta.slug = slug;
@@ -94,13 +110,14 @@ async function convert_content(
     case 'heading':
       return {
         type: 0x11,
+        id: (node.data as { id: string })?.id,
         depth: node.depth,
         children: await child_nodes_to_document(document, node, node.children, doc_source, fetch),
       };
     case 'html':
       return {
         type: 0x7f,
-        html: node.value,
+        html: await process_embedded_html(node.value),
       };
     case 'paragraph':
       return {
@@ -113,7 +130,6 @@ async function convert_content(
         value: node.value,
       };
     case 'link':
-      node.title;
       return {
         type: 0x01,
         href: node.url,
@@ -142,6 +158,12 @@ async function convert_content(
   }
 
   return undefined;
+}
+
+async function process_embedded_html(html: string): Promise<string> {
+  const parsed_html = embedded_html_parser.parse(html);
+  const processed_html = (await embedded_html_parser.run(parsed_html)) as HtmlRoot;
+  return embedded_html_parser.stringify(processed_html);
 }
 
 function read_code_block(
@@ -258,6 +280,7 @@ export type ParagraphNode = {
 
 export type HeadingNode = {
   type: 0x11 /* heading */;
+  id: string;
   depth: 1 | 2 | 3 | 4 | 5 | 6;
 };
 export type ListBlockNode = {

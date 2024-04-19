@@ -13,7 +13,7 @@
 {#if node.type === 0x00}
   {node.value}
 {:else if node.type === 0x01}
-  <a href={node.href}>
+  <a href={node.href} class="link">
     <BDocumentChildrenView children={node.children} />
   </a>
 {:else if node.type === 0x10}
