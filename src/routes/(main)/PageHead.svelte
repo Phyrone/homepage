@@ -7,3 +7,4 @@
 
 <svelte:window bind:scrollY={scoll_pos} />
 
+<nav></nav>

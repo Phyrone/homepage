@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { BDocument } from '$scripts/BDocument';
-  import BDocumentChildrenView from '$components/bdocument/BDocumentChildrenView.svelte';
+  import BDocumentChildrenView from '$components/bdocument/BDocumentAllChildsView.svelte';
 
   export let document: BDocument;
 </script>

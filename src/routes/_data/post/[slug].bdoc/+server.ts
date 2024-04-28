@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { error } from '@sveltejs/kit';
-import { load_blog_post } from '$scripts/blog_prerender_utils';
+import { load_blog_post } from '$scripts/blog_prerender.server';
 import { blog_data_headers } from '$scripts/utils';
 import write_bin from '$scripts/write_bin';
 

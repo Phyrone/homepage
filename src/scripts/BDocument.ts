@@ -3,7 +3,7 @@ import type { Code, Image, InlineCode, PhrasingContent, Root, RootContent } from
 import jsYaml from 'js-yaml';
 import highlight, { type HighlightResult } from 'highlight.js';
 import type { FetchFunction, ImageData } from '$scripts/types';
-import { getFileName } from '$scripts/image_utils';
+import { getFileName } from '$scripts/images.server';
 import { mp_codec } from '$scripts/utils';
 import { decode } from 'msgpack-lite';
 import remarkFrontmatter from 'remark-frontmatter';
@@ -13,6 +13,7 @@ import remarkEmoji from 'remark-emoji';
 import remarkDirective from 'remark-directive';
 import remarkHeadingId from 'remark-heading-id';
 import { DATA_BASE_URL } from '$scripts/consts';
+import moment from 'moment';
 
 const md_parser = remark()
   .use(remarkFrontmatter)
@@ -37,24 +38,41 @@ export async function markdown_to_bdoc(
   const parsed = md_parser.parse(markdown);
   const processed = await md_parser.run(parsed);
   await ast_to_bdoc(document, processed, doc_source, fetch);
-  await enhance_metadata(document, doc_source, fetch);
-  //TODO allow slug to be set in frontmatter
-  document.meta.slug = slug;
+  await process_metadata(document, doc_source, fetch);
+
   return document;
 }
 
-async function enhance_metadata(
+async function process_metadata(
   document: BDocument,
   doc_source: string,
   fetch: FetchFunction,
 ): Promise<void> {
-  const thumbnail = document.meta.thumbnail;
-  if (thumbnail && typeof thumbnail === 'string') {
-    const file_name = getFileName(thumbnail, doc_source);
-    document.meta.thumbnail = await fetch(`${DATA_BASE_URL}/images/${file_name}.bdoc`)
-      .then((r) => r.arrayBuffer())
-      .then((r) => new Uint8Array(r))
-      .then((r) => decode(r, { codec: mp_codec }));
+  const raw_metadata = document.meta as Record<string, unknown>;
+
+  //thumbnail
+  //  add variants for different sizes and formats
+  {
+    const thumbnail = raw_metadata.thumbnail;
+    if (thumbnail && typeof thumbnail === 'string') {
+      const file_name = getFileName(thumbnail, doc_source);
+      document.meta.thumbnail = await fetch(`${DATA_BASE_URL}/images/${file_name}.bdoc`)
+        .then((r) => r.arrayBuffer())
+        .then((r) => new Uint8Array(r))
+        .then((r) => decode(r, { codec: mp_codec }));
+    }
+  }
+  //release date
+  {
+    try {
+      const date = raw_metadata.date;
+      if (date && typeof date === 'string') {
+        document.meta.date = moment(date).toDate().toISOString();
+      }
+    } catch (e) {
+      document.meta.date_invalid = document.meta.date;
+      delete document.meta.date;
+    }
   }
 }
 
@@ -92,13 +110,17 @@ async function convert_content(
   doc_source: string,
   fetch: FetchFunction,
 ): Promise<BDocumentNode | undefined> {
+  if (!node.type) return undefined;
+  let result: BDocumentNode;
   switch (node.type) {
     case 'thematicBreak':
       return undefined;
     case 'code':
-      return read_code_block(document, parent, node);
+      result = read_code_block(document, parent, node, undefined);
+      break;
     case 'inlineCode':
-      return read_code_block(document, parent, node, true);
+      result = read_code_block(document, parent, node, true);
+      break;
     case 'image':
       return await read_image_data(document, parent, node, doc_source, fetch);
     case 'heading':
@@ -109,40 +131,46 @@ async function convert_content(
         children: await child_nodes_to_document(document, node, node.children, doc_source, fetch),
       };
     case 'html':
-      return {
+      result = {
         type: 0x7f,
         html: node.value,
       };
+      break;
     case 'paragraph':
-      return {
+      result = {
         type: 0x10,
         children: await child_nodes_to_document(document, node, node.children, doc_source, fetch),
       };
+      break;
     case 'text':
-      return {
+      result = {
         type: 0x00,
         value: node.value,
       };
+      break;
     case 'link':
-      return {
+      result = {
         type: 0x01,
         href: node.url,
         title: node.title ?? undefined,
         children: await child_nodes_to_document(document, node, node.children, doc_source, fetch),
       };
+      break;
     case 'list':
-      return {
+      result = {
         type: 0x12,
         children: await child_nodes_to_document(document, node, node.children, doc_source, fetch),
       };
+      break;
     case 'listItem':
-      return {
+      result = {
         type: 0x03,
         children: await child_nodes_to_document(document, node, node.children, doc_source, fetch),
       };
+      break;
     case 'yaml':
       document.meta = Object.assign(document.meta, jsYaml.load(node.value));
-      break;
+      return undefined;
     default:
       return {
         type: -1,
@@ -150,8 +178,12 @@ async function convert_content(
         data: node,
       };
   }
-
-  return undefined;
+  /* POST PROCESSING */
+  const hProperties = (node.data as { hProperties: Record<string, unknown> })?.hProperties;
+  if (hProperties) {
+    result.hProperties = hProperties;
+  }
+  return result;
 }
 
 function read_code_block(
@@ -204,10 +236,16 @@ async function read_image_data(
   fetch: FetchFunction,
 ): Promise<BDocumentNode | undefined> {
   const file_name = getFileName(node.url, doc_source);
-  const data: ImageData = await fetch(`${DATA_BASE_URL}/images/${file_name}.bdoc`)
+  const image_data_url = `${DATA_BASE_URL}/images/${file_name}.bdoc`;
+  const data: ImageData = await fetch(image_data_url)
+    .then((r) => {
+      if (r.ok) return r;
+      else throw new Error('Failed to fetch image on ' + image_data_url);
+    })
     .then((r) => r.arrayBuffer())
     .then((r) => new Uint8Array(r))
     .then((r) => decode(r, { codec: mp_codec }));
+
   return {
     type: 0x45,
     src: data.metadata.src,
@@ -220,7 +258,7 @@ async function read_image_data(
 export type BDocMetadata = {
   slug: string;
   title?: string;
-  thumbnail?: string | ImageData;
+  thumbnail?: ImageData;
   description?: string;
   tags?: string[];
   date?: string;
@@ -233,6 +271,7 @@ export type BDocument = {
 
 export type BDocumentNode = {
   children?: BDocumentNode[];
+  hProperties?: Record<string, unknown> | undefined;
 } & NodeType;
 
 export type NodeType =

@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import type { Feed } from 'feed';
-import { create_feed } from '$scripts/feed_prerender';
+import { create_feed } from '$scripts/feed_prerender.server';
 
 export const prerender = true;
 export const trailingSlash = 'never';

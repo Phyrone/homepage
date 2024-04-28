@@ -5,7 +5,4 @@
   <title>Phyrone | Home</title>
 </svelte:head>
 
-<div class="h-screen w-screen bg-base-300">
-
-
-</div>
+<div class="h-screen w-screen bg-base-300"></div>

@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { getImageData } from '$scripts/image_utils';
+import { getImageData } from '$scripts/images.server';
 import { error } from '@sveltejs/kit';
 import { encode } from 'msgpack-lite';
 import { blog_data_headers, mp_codec } from '$scripts/utils';

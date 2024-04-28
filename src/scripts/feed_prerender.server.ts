@@ -24,7 +24,7 @@ export async function create_feed(fetch: FetchFunction): Promise<Feed> {
     },
   });
 
-  const posts = await fetch(`${DATA_BASE_URL}/posts.bdoc`)
+  const posts = await fetch(`${DATA_BASE_URL}/slugs.bdoc`)
     .then((r) => r.arrayBuffer())
     .then((b) => new Uint8Array(b))
     .then((b) => decode(b, { codec: mp_codec }) as string[]);

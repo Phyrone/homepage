@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { all_post_slugs } from '$scripts/blog_prerender_utils';
+import { all_post_slugs } from '$scripts/blog_prerender.server';
 
 export const prerender = true;
 export const trailingSlash = 'never';

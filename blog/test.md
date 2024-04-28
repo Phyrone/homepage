@@ -22,7 +22,7 @@ tags:
 
 Emojis in this text will be replaced: :dog: :+1: :smile:
 
-![image_alt](_media/bg_sunset_1_reduced.png)
+![image_alt](media/bg_sunset_1_reduced.png)
 
 ```kotlin
 print("hello world from kotlin");
@@ -51,7 +51,7 @@ voluptatem voluptas facere. Qui occaecati sit qui excepturi cupiditate. Facilis 
 voluptas voluptas necessitatibus nemo amet dicta dolor. Totam maxime molestias aut placeat autem modi et magni sed
 mollitia quis tempora corporis.
 
-![mountains](_media/mountains.png)
+![mountains](media/mountains.png)
 
 ```mermaid
 graph TD
