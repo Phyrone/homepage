@@ -4,7 +4,7 @@
   import type { BDocMetadata } from '$scripts/BDocument';
 
   export let data: PageData;
-  let posts: [Date, string, BDocMetadata][];
+  let posts: [[number, number, number], string, BDocMetadata][];
   $: posts = data.posts;
 </script>
 
@@ -12,10 +12,6 @@
   <title>Phyrone | Home</title>
 </svelte:head>
 
-{#each posts as [date, slug, metadata] }
-  <BPostCard
-    slug={slug}
-    date={date}
-    metadata={metadata}
-  />
+{#each posts as [date, slug, metadata]}
+  <BPostCard slug={slug} date={date} metadata={metadata} />
 {/each}

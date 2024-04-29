@@ -9,7 +9,5 @@ export default {
     extend: {},
   },
   plugins: [typography, forms, daisyui],
-  daisyui: {
-
-  },
+  daisyui: {},
 };

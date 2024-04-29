@@ -2,10 +2,8 @@ import type { AllPostsOverview, FetchFunction } from '$scripts/types';
 import { Feed, type Item as FeedItem } from 'feed';
 import { DATA_BASE_URL } from '$scripts/consts';
 import type { BDocMetadata } from '$scripts/BDocument';
-import { decode } from 'msgpack-lite';
-import { date_tree_to_array, mp_codec } from '$scripts/utils';
-import read_bin, { read_bin_response } from '$scripts/read_bin';
-import type { ImageData } from '$scripts/types';
+import { date_tree_to_array } from '$scripts/utils';
+import { read_bin_response } from '$scripts/read_bin';
 
 const last_updated = new Date();
 

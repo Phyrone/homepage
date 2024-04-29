@@ -4,8 +4,6 @@ import jsYaml from 'js-yaml';
 import highlight, { type HighlightResult } from 'highlight.js';
 import type { FetchFunction, ImageData } from '$scripts/types';
 import { getFileName } from '$scripts/images.server';
-import { mp_codec } from '$scripts/utils';
-import { decode } from 'msgpack-lite';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';

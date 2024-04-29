@@ -1,7 +1,7 @@
 import type { PageLoad } from './$types';
 import type { BDocument } from '$scripts/BDocument';
 import { error } from '@sveltejs/kit';
-import read_bin, { read_bin_response } from '$scripts/read_bin';
+import { read_bin_response } from '$scripts/read_bin';
 import { DATA_BASE_URL } from '$scripts/consts';
 import { RequestError } from '$scripts/types';
 

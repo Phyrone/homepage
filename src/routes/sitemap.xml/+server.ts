@@ -8,7 +8,7 @@ import { date_tree_to_array } from '$scripts/utils';
 export const prerender = true;
 export const trailingSlash = 'never';
 
-export const GET: RequestHandler = async ({fetch}) => {
+export const GET: RequestHandler = async ({ fetch }) => {
   const posts: AllPostsOverview = await read_bin_response<AllPostsOverview>(
     fetch(`${DATA_BASE_URL}/posts`),
   );
@@ -30,7 +30,7 @@ export const GET: RequestHandler = async ({fetch}) => {
     changefreq: 'hourly',
   });
 
-  for (const [[year,month,day],slug] of   date_tree_to_array(posts)) {
+  for (const [[year, month, day], slug] of date_tree_to_array(posts)) {
     const date = new Date(year, month - 1, day);
     //include media information
     sitemap.write({
