@@ -3,7 +3,7 @@ import { createMermaidRenderer } from 'mermaid-isomorphic';
 import base64url from 'base64url';
 import { error } from '@sveltejs/kit';
 
-export const prerender = true;
+export const prerender = 'auto';
 
 const renderer = createMermaidRenderer();
 

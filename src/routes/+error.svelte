@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MainLayout from './(main)/MainLayout.svelte';
+  import MainLayout from './(main)/PageSkeleton.svelte';
   import { page } from '$app/stores';
 </script>
 

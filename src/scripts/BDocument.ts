@@ -14,6 +14,7 @@ import remarkDirective from 'remark-directive';
 import remarkHeadingId from 'remark-heading-id';
 import { DATA_BASE_URL } from '$scripts/consts';
 import moment from 'moment';
+import { read_bin_response } from '$scripts/read_bin';
 
 const md_parser = remark()
   .use(remarkFrontmatter)
@@ -56,10 +57,9 @@ async function process_metadata(
     const thumbnail = raw_metadata.thumbnail;
     if (thumbnail && typeof thumbnail === 'string') {
       const file_name = getFileName(thumbnail, doc_source);
-      document.meta.thumbnail = await fetch(`${DATA_BASE_URL}/images/${file_name}.bdoc`)
-        .then((r) => r.arrayBuffer())
-        .then((r) => new Uint8Array(r))
-        .then((r) => decode(r, { codec: mp_codec }));
+      document.meta.thumbnail = await read_bin_response<ImageData>(
+        fetch(`${DATA_BASE_URL}/images/${file_name}`),
+      );
     }
   }
   //release date
@@ -236,15 +236,8 @@ async function read_image_data(
   fetch: FetchFunction,
 ): Promise<BDocumentNode | undefined> {
   const file_name = getFileName(node.url, doc_source);
-  const image_data_url = `${DATA_BASE_URL}/images/${file_name}.bdoc`;
-  const data: ImageData = await fetch(image_data_url)
-    .then((r) => {
-      if (r.ok) return r;
-      else throw new Error('Failed to fetch image on ' + image_data_url);
-    })
-    .then((r) => r.arrayBuffer())
-    .then((r) => new Uint8Array(r))
-    .then((r) => decode(r, { codec: mp_codec }));
+  const image_data_url = `${DATA_BASE_URL}/images/${file_name}`;
+  const data: ImageData = await read_bin_response(fetch(image_data_url));
 
   return {
     type: 0x45,

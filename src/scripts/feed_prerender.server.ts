@@ -1,10 +1,10 @@
-import type { FetchFunction } from '$scripts/types';
-import { Feed } from 'feed';
+import type { AllPostsOverview, FetchFunction } from '$scripts/types';
+import { Feed, type Item as FeedItem } from 'feed';
 import { DATA_BASE_URL } from '$scripts/consts';
 import type { BDocMetadata } from '$scripts/BDocument';
 import { decode } from 'msgpack-lite';
-import { mp_codec } from '$scripts/utils';
-import read_bin from '$scripts/read_bin';
+import { date_tree_to_array, mp_codec } from '$scripts/utils';
+import read_bin, { read_bin_response } from '$scripts/read_bin';
 import type { ImageData } from '$scripts/types';
 
 const last_updated = new Date();
@@ -24,34 +24,35 @@ export async function create_feed(fetch: FetchFunction): Promise<Feed> {
     },
   });
 
-  const posts = await fetch(`${DATA_BASE_URL}/slugs.bdoc`)
-    .then((r) => r.arrayBuffer())
-    .then((b) => new Uint8Array(b))
-    .then((b) => decode(b, { codec: mp_codec }) as string[]);
+  const posts: AllPostsOverview = await read_bin_response<AllPostsOverview>(
+    fetch(`${DATA_BASE_URL}/posts`),
+  );
 
+  const posts_array = date_tree_to_array<BDocMetadata>(posts);
   await Promise.all(
-    posts.map(async (slug) => {
-      const metadata = await fetch(`${DATA_BASE_URL}/post/${slug}.bmet`)
-        .then((r) => r.arrayBuffer())
-        .then((b) => new Uint8Array(b))
-        .then((b) => read_bin(b) as BDocMetadata);
-      const local_link = `/blog/${metadata.slug}`;
+    posts_array.map(async ([[year, month, day], slug, metadata]) => {
+      const date = new Date(year, month - 1, day);
+      const local_link = `/${year}/${month}/${day}/${slug}`;
       const global_link = `https://www.phyrone.de${local_link}`;
-      const content_html = await fetch(local_link).then((r) => r.text());
-
-      let image_src: string | undefined = undefined;
-      if (metadata.thumbnail) {
-        image_src = `https://www.phyrone.de${(metadata.thumbnail as ImageData | undefined)?.metadata?.src}`;
-      }
-      feed.addItem({
+      const item: FeedItem = {
         id: slug,
         title: metadata.title ?? `Post ${slug}`,
-        image: image_src,
         link: global_link,
         //TODO determine date
-        date: last_updated,
-        content: content_html,
-      });
+        date,
+      };
+      const local_image_link = metadata.thumbnail?.metadata?.src;
+      if (local_image_link) {
+        const length = await fetch(local_image_link)
+          .then((r) => r.arrayBuffer())
+          .then((b) => b.byteLength);
+
+        item.image = {
+          url: `https://www.phyrone.de${local_image_link}`,
+          length,
+        };
+      }
+      feed.addItem(item);
     }),
   );
 

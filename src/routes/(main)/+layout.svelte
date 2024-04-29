@@ -1,5 +1,5 @@
 <script>
-  import MainLayout from './MainLayout.svelte';
+  import MainLayout from './PageSkeleton.svelte';
 </script>
 
 <MainLayout>

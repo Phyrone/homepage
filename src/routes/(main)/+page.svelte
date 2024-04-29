@@ -1,8 +1,21 @@
 <script lang="ts">
+  import type { PageData } from './$types';
+  import BPostCard from './BPostCard.svelte';
+  import type { BDocMetadata } from '$scripts/BDocument';
+
+  export let data: PageData;
+  let posts: [Date, string, BDocMetadata][];
+  $: posts = data.posts;
 </script>
 
 <svelte:head>
   <title>Phyrone | Home</title>
 </svelte:head>
 
-<div class="h-screen w-screen bg-base-300"></div>
+{#each posts as [date, slug, metadata] }
+  <BPostCard
+    slug={slug}
+    date={date}
+    metadata={metadata}
+  />
+{/each}

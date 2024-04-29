@@ -85,11 +85,11 @@ for (const file in files_metadata) {
     preload_sets: [0],
     srcsets: [
       {
-        type: 'images/avif',
+        type: 'image/avif',
         set: files_avif[file],
       },
       {
-        type: 'images/webp',
+        type: 'image/webp',
         set: files_webp[file],
       },
     ],

@@ -1,28 +1,27 @@
 ---
-thumbnail: _media/pix2.png
+thumbnail: /blog/media/pix2.png
 title: Test Title 123
 authors:
   - Phyrone <phyrone@phyrone.de>
-date: 30.08.2023
 tags:
   - test
 ---
 
 # H1 {#header1}
 
-## H2 {#header1}
+## H2 {#header2}
 
-### H3 {#header1}
+### H3 {#header3}
 
-#### H4 {#header1}
+#### H4 {#header4}
 
-##### H5 {#header1}
+##### H5 {#header5}
 
-###### H6 {#header1}
+###### H6 {#header6}
 
 Emojis in this text will be replaced: :dog: :+1: :smile:
 
-![image_alt](media/bg_sunset_1_reduced.png)
+![image_alt](../../media/bg_sunset_1_reduced.png)
 
 ```kotlin
 print("hello world from kotlin");
@@ -51,7 +50,7 @@ voluptatem voluptas facere. Qui occaecati sit qui excepturi cupiditate. Facilis 
 voluptas voluptas necessitatibus nemo amet dicta dolor. Totam maxime molestias aut placeat autem modi et magni sed
 mollitia quis tempora corporis.
 
-![mountains](media/mountains.png)
+![mountains](../../media/mountains.png)
 
 ```mermaid
 graph TD

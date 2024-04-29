@@ -1,3 +1,5 @@
+import type { BDocMetadata, BDocument } from '$scripts/BDocument';
+
 export type ImageData = {
   metadata: ImageMetadata;
   preview: string;
@@ -25,3 +27,20 @@ export type Srcset = {
 };
 
 export type FetchFunction = typeof fetch;
+
+export type BlogPostIdentifier = {
+  year: number;
+  month: number;
+  day: number;
+  slug: string;
+};
+
+export class RequestError extends Error {
+  constructor(public response: Response) {
+    super(response.statusText);
+  }
+}
+
+export type DateTree<T> = Record<number, Record<number, Record<number, Record<string, T>>>>;
+export type AllPosts = DateTree<BDocument>;
+export type AllPostsOverview = DateTree<BDocMetadata>;
