@@ -27,8 +27,9 @@ jobs:
             playwright-${{ runner.os }}-
       - name: Install dependencies
         run: bun install --frozen-lockfile
-      #- name: Check
-      #  run: bun run check
+      - name: Check
+        run: bun run check
+        continue-on-error: true
       - name: Lint
         run: bun run lint
       - name: Build
