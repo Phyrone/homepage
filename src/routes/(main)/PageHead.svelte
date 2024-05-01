@@ -20,11 +20,11 @@
   class:active:opacity-100={transparent}
   class:active:duration-200={transparent}
 >
-  <nav class="navbar mx-auto max-w-screen-xl transition-all px-5 sm:px-3 md:px-1">
+  <nav class="navbar mx-auto max-w-screen-xl px-5 transition-all sm:px-3 md:px-1">
     <a class="btn mr-1" href="/">
-      <Home/>
+      <Home />
     </a>
-    <label class="input input-bordered flex flex-auto max-w-full overflow-clip">
+    <label class="input input-bordered flex max-w-full flex-auto overflow-clip">
       <Search />
       <input type="search" class="grow border-0" placeholder="Comming Soon" disabled />
     </label>
