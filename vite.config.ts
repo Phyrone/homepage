@@ -3,6 +3,7 @@ import { imagetools } from 'vite-imagetools';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 
+//@ts-ignore
 export default defineConfig(async () => {
   return {
     plugins: [

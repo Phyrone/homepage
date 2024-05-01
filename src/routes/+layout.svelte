@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '$styles/app.pcss';
   import '$styles/main.scss';
   import { navigating } from '$app/stores';
   import Navigatingindicator from './Navigatingindicator.svelte';
@@ -6,7 +7,7 @@
 </script>
 
 {#if $navigating}
-  <Navigatingindicator />
+  <Navigatingindicator></Navigatingindicator>
 {/if}
-<Toaster position="bottom-right" richColors />
+<Toaster position="bottom-right" richColors></Toaster>
 <slot />

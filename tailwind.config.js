@@ -1,43 +1,13 @@
-/** @type {import("tailwindcss").Config} */
+import daisyui from 'daisyui';
+import typography from '@tailwindcss/typography';
+import forms from '@tailwindcss/forms';
+
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {},
   },
-  daisyui: {
-    logs: false,
-    darkTheme: 'dark',
-    themes: [
-      'light',
-      'dark',
-      'cupcake',
-      'bumblebee',
-      'emerald',
-      'corporate',
-      'synthwave',
-      'retro',
-      'cyberpunk',
-      'valentine',
-      'halloween',
-      'garden',
-      'forest',
-      'aqua',
-      'lofi',
-      'pastel',
-      'fantasy',
-      'wireframe',
-      'black',
-      'luxury',
-      'dracula',
-      'cmyk',
-      'autumn',
-      'business',
-      'acid',
-      'lemonade',
-      'night',
-      'coffee',
-      'winter',
-    ],
-  },
-  plugins: [require('daisyui')],
+  plugins: [typography, forms, daisyui],
+  daisyui: {},
 };

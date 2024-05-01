@@ -1,37 +1,40 @@
 import type { RequestHandler } from './$types';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { all_post_slugs } from '$scripts/blog_prerender_utils';
+import { DATA_BASE_URL } from '$scripts/consts';
+import { read_bin_response } from '$scripts/read_bin';
+import type { AllPostsOverview } from '$scripts/types';
+import { date_tree_to_array } from '$scripts/utils';
 
 export const prerender = true;
 export const trailingSlash = 'never';
 
-export const GET: RequestHandler = async () => {
-  const slugs = all_post_slugs();
+export const GET: RequestHandler = async ({ fetch }) => {
+  const posts: AllPostsOverview = await read_bin_response<AllPostsOverview>(
+    fetch(`${DATA_BASE_URL}/posts`),
+  );
 
   const sitemap = new SitemapStream({
     hostname: 'https://www.phyrone.de/',
     lastmodDateOnly: false,
   });
 
-  const date = new Date().toISOString();
-
   //TODO include images information
   sitemap.write({
     url: '/',
     priority: 1.0,
     changefreq: 'monthly',
-    lastmod: date,
   });
   sitemap.write({
     url: '/blog/',
     priority: 1.0,
     changefreq: 'hourly',
-    lastmod: date,
   });
-  for (const slug of slugs) {
+
+  for (const [[year, month, day], slug] of date_tree_to_array(posts)) {
+    const date = new Date(year, month - 1, day);
     //include media information
     sitemap.write({
-      url: '/blog/' + slug + '/',
+      url: `${year}/${month}/${day}/${slug}`,
       changefreq: 'weekly',
       priority: 1.0,
       lastmod: date,
@@ -42,13 +45,11 @@ export const GET: RequestHandler = async () => {
     url: '/impressum/',
     priority: 0.3,
     changefreq: 'yearly',
-    lastmod: date,
   });
   sitemap.write({
-    url: '/privacy/',
+    url: '/datenschutz/',
     priority: 0.3,
     changefreq: 'yearly',
-    lastmod: date,
   });
   sitemap.end();
   const sitemap_buffer = await streamToPromise(sitemap);

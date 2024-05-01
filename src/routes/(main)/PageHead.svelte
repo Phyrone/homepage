@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Home, Search } from 'lucide-svelte';
+
   let scoll_pos: number;
 
   let transparent = true;
@@ -6,69 +8,25 @@
 </script>
 
 <svelte:window bind:scrollY={scoll_pos} />
-
 <div
-  class="navbar sticky top-0 z-30 mb-4 h-12 w-full rounded-b-md bg-base-300 shadow-2xl transition-all"
-  class:duration-1000={transparent}
-  class:bg-semi-transparent={transparent}
-  class:backdrop-blur={transparent}
+  class="sticky top-0 z-30 w-full bg-base-300"
+  class:opacity-75={transparent}
+  class:delay-1000={transparent}
+  class:duration-500={transparent}
+  class:hover:delay-0={transparent}
+  class:hover:opacity-100={transparent}
+  class:hover:duration-200={transparent}
+  class:active:delay-0={transparent}
+  class:active:opacity-100={transparent}
+  class:active:duration-200={transparent}
 >
-  <div class="join w-full">
-    <a class:nbb-sm={true} class:nbb={!transparent} class:nbb-transparent={transparent} href="/">
-      <i class="fa-solid fa-house fa-xl"></i>
+  <nav class="navbar mx-auto max-w-screen-xl transition-all px-5 sm:px-3 md:px-1">
+    <a class="btn mr-1" href="/">
+      <Home/>
     </a>
-    <a
-      class:nbb-sm={true}
-      class:nbb={!transparent}
-      class:nbb-transparent={transparent}
-      aria-label="Youtube Channel"
-      href="https://www.youtube.com/@phyrone"
-      rel="external"
-    >
-      <i class="fa-brands fa-youtube fa-xl"></i>
-    </a>
-    <a
-      class:nbb-lg={true}
-      class:nbb={!transparent}
-      class:nbb-transparent={transparent}
-      aria-label="Blog"
-      href="/blog">Blog</a
-    >
-    <a
-      class:nbb-sm={true}
-      class:nbb={!transparent}
-      class:nbb-transparent={transparent}
-      aria-label="Join Discord Server"
-      href="https://discord.gg/rb3qeBj4Fv"
-      rel="external"
-    >
-      <i class="fa-brands fa-discord fa-xl"></i>
-    </a>
-    <a
-      class:nbb-sm={true}
-      class:nbb={!transparent}
-      class:nbb-transparent={transparent}
-      aria-label="Github Profile"
-      href="https://github.com/Phyrone"
-      rel="external"
-    >
-      <i class="fa-brands fa-github fa-xl"></i>
-    </a>
-  </div>
+    <label class="input input-bordered flex flex-auto max-w-full overflow-clip">
+      <Search />
+      <input type="search" class="grow border-0" placeholder="Comming Soon" disabled />
+    </label>
+  </nav>
 </div>
-
-<style lang="sass">
-  .nbb-sm
-    @apply flex-none
-  .nbb-lg
-    @apply flex-auto
-  .nbb
-    @apply btn btn-ghost join-item
-
-  .nbb-transparent
-    @apply text-white btn btn-ghost join-item
-
-  .bg-semi-transparent
-    background: rgba(0, 0, 0, 0.8)
-
-</style>
