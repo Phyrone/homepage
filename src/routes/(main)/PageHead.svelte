@@ -20,9 +20,9 @@
   class:active:opacity-100={transparent}
   class:active:duration-200={transparent}
 >
-  <nav class="navbar mx-auto max-w-screen-xl transition-all">
+  <nav class="navbar mx-auto max-w-screen-xl transition-all px-5 sm:px-3 md:px-1">
     <a class="btn mr-1" href="/">
-      <Home />
+      <Home/>
     </a>
     <label class="input input-bordered flex flex-auto">
       <Search />

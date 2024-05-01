@@ -29,7 +29,7 @@
     <BDocumentAllChildrenView children={node.children} />
   </BDocumentHeadingView>
 {:else if node.type === 0x45}
-  <div class="my-0.5 overflow-hidden rounded-2xl">
+  <div class="my-0.5 overflow-hidden rounded-2xl w-full  max-w-screen-lg">
     {#if node.data}
       <LazyImage alt={node.alt ?? 'no image description'} img_data={node.data} />
     {:else}

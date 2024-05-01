@@ -32,18 +32,22 @@ export async function create_feed(fetch: FetchFunction): Promise<Feed> {
       const date = new Date(year, month - 1, day);
       const local_link = `/${year}/${month}/${day}/${slug}`;
       const global_link = `https://www.phyrone.de${local_link}`;
+      const content = await fetch(`${DATA_BASE_URL}/post${local_link}/raw.html`)
+        .then((r) => r.text());
       const item: FeedItem = {
         id: slug,
         title: metadata.title ?? `Post ${slug}`,
         link: global_link,
         //TODO determine date
         date,
+        content
       };
       const local_image_link = metadata.thumbnail?.metadata?.src;
       if (local_image_link) {
         const length = await fetch(local_image_link)
           .then((r) => r.arrayBuffer())
           .then((b) => b.byteLength);
+
 
         item.image = {
           url: `https://www.phyrone.de${local_image_link}`,

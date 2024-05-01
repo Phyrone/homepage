@@ -17,13 +17,13 @@
   {/each}
 </svelte:head>
 
-<div class="relative h-full w-full overflow-hidden">
+<div class="relative overflow-hidden w-full h-full flex-none">
   <img
     src={img_data.preview}
     alt={alt ?? 'no-description'}
-    class="h-full w-full blur"
-    width="100%"
-    height="100%"
+    class="h-full w-full blur aspect-auto"
+    width={img_data.metadata.width}
+    height={img_data.metadata.height}
     loading="eager"
   />
   <picture>
@@ -34,8 +34,8 @@
       src={src}
       alt={alt ?? 'no-description'}
       class="absolute bottom-0 top-0 h-full w-full"
-      width="100%"
-      height="100%"
+      width={img_data.metadata.width}
+      height={img_data.metadata.height}
       loading="lazy"
     />
   </picture>

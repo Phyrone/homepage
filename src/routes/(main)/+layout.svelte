@@ -1,7 +1,7 @@
 <script>
-  import MainLayout from './PageSkeleton.svelte';
+  import PageSkeleton from './PageSkeleton.svelte';
 </script>
 
-<MainLayout>
+<PageSkeleton>
   <slot />
-</MainLayout>
+</PageSkeleton>

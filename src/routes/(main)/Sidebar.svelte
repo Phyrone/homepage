@@ -2,9 +2,7 @@
   import { Rss } from 'lucide-svelte';
 </script>
 
-<div class="sticky bottom-0 top-0 flex h-fit flex-col rounded-md shadow-2xl">
-  <ul class="menu w-56 rounded-box bg-base-200"></ul>
-
+<div class="z-0 md:sticky none right-0 bottom-0 top-0 h-fit flex flex-row md:flex-col rounded-md bg-base-200">
   <div class="flex flex-wrap">
     <a class="btn btn-sm" href="/rss.xml">
       <Rss size={14} />
