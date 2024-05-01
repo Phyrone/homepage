@@ -24,7 +24,7 @@
     <a class="btn mr-1" href="/">
       <Home/>
     </a>
-    <label class="input input-bordered flex flex-auto">
+    <label class="input input-bordered flex flex-auto max-w-full overflow-clip">
       <Search />
       <input type="search" class="grow border-0" placeholder="Comming Soon" disabled />
     </label>
