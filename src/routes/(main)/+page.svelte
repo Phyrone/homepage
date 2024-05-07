@@ -12,9 +12,10 @@
   <title>Phyrone | Home</title>
 </svelte:head>
 
-<div class="flex flex-row flex-wrap justify-center sm:flex-nowrap sm:flex-col flex-auto gap-2 px-2 py-3 w-full max-w-screen-md mx-auto">
+<div
+  class="mx-auto flex w-full max-w-screen-md flex-auto flex-row flex-wrap justify-center gap-2 px-2 py-3 sm:flex-col sm:flex-nowrap"
+>
   {#each posts as post}
-    <BPostCard pos={posts.indexOf(post)}  date={post[0]} slug={post[1]} metadata={post[2]} />
+    <BPostCard pos={posts.indexOf(post)} date={post[0]} slug={post[1]} metadata={post[2]} />
   {/each}
 </div>
-

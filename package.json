@@ -88,7 +88,7 @@
     "js-yaml": "^4.1.0",
     "kuto": "^0.3.6",
     "localforage": "^1.10.0",
-    "lucide-svelte": "^0.372.0",
+    "lucide-svelte": "^0.378.0",
     "lz4js": "^0.2.0",
     "mdast": "^3.0.0",
     "mdast-util-math": "^3.0.0",
@@ -115,5 +115,5 @@
     "unified-stream": "^3.0.0",
     "vfile": "^6.0.1"
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "packageManager": "pnpm@9.1.0+sha512.67f5879916a9293e5cf059c23853d571beaf4f753c707f40cb22bed5fb1578c6aad3b6c4107ccb3ba0b35be003eb621a16471ac836c87beb53f9d54bb4612724"
 }

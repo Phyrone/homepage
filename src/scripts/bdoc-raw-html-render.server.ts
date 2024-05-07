@@ -134,7 +134,7 @@ function image_node_to_html_element(node: ImageNode): ElementContent {
       properties: {
         srcset: srcset.set,
         type: srcset.type,
-      }
+      },
     } satisfies Element;
   });
   return {
