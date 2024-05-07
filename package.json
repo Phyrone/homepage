@@ -109,7 +109,7 @@
     "remark-parse": "^11.0.0",
     "sitemap": "^7.1.1",
     "svelte-adapter-bun": "^0.5.1",
-    "svelte-eslint-parser": "^0.34.1",
+    "svelte-eslint-parser": "^0.35.0",
     "svelte-sonner": "^0.3.22",
     "unified": "^11.0.4",
     "unified-stream": "^3.0.0",
