@@ -1,5 +1,5 @@
 on:
-  push: {}
+  push: { }
 name: Build
 jobs:
   build:
@@ -23,12 +23,20 @@ jobs:
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - uses: actions/cache@v4
-        name: Setup pnpm cache
+        name: Pnpm Cache
         with:
           path: '${{ env.STORE_PATH }}'
           key: "${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}"
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+      - name: Playwright Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: "${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}"
+          restore-keys: |
+            ${{ runner.os }}-playwright-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Check
@@ -41,6 +49,6 @@ jobs:
       - name: Unit Tests
         run: pnpm run test:unit --run
       - name: Install Playwright
-        run: pnpm run playwright install --with-deps
+        run: pnpm exec playwright install --with-deps
       - name: E2E Tests
         run: pnpm run test:e2e
