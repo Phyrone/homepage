@@ -8,35 +8,39 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-      - name: Cache dependencies
-        uses: actions/cache@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ~/.bun/install/cache
-          key: "bun-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}"
-          restore-keys: |
-            bun-${{ runner.os }}-
-      - name: Cache Playwright
-        uses: actions/cache@v4
-        id: playwright-cache
+          node-version: 'lts/*'
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
         with:
-          path: '~/.cache/ms-playwright'
-          key: "playwright-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}"
+          version: 'latest'
+          run_install: false
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: "${{ env.STORE_PATH }}"
+          key: "${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}"
           restore-keys: |
-            playwright-${{ runner.os }}-
+            ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Check
-        run: bun run check
+        run: pnpm run check
         continue-on-error: true
       - name: Lint
-        run: bun run lint
+        run: pnpm run lint
       - name: Build
-        run: bun run build
+        run: pnpm run build
       - name: Unit Tests
-        run: bun run test:unit --run
+        run: pnpm run test:unit --run
       - name: Install Playwright
-        run: bun run playwright install --with-deps
+        run: pnpm run playwright install --with-deps
       - name: E2E Tests
-        run: bun run test:e2e
+        run: pnpm run test:e2e
