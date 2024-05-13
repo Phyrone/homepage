@@ -248,7 +248,7 @@ importers:
         version: 3.7.1(postcss-load-config@5.1.0(jiti@1.21.0)(postcss@8.4.38))(postcss@8.4.38)(sass@1.77.1)(svelte@4.2.16)
       svelte-migrate:
         specifier: ^1.3.6
-        version: 1.4.0
+        version: 1.4.1
       tailwindcss:
         specifier: ^3.3.6
         version: 3.4.3
@@ -3413,8 +3413,8 @@ packages:
     peerDependencies:
       svelte: ^3.19.0 || ^4.0.0
 
-  svelte-migrate@1.4.0:
-    resolution: {integrity: sha512-2mLNcWH6FQKjsHV+a+j3SwtzTJqX2naYR0bAywgQULvEc50oY6wdbFAE0RCZFFbOEd+tKeXTeFo1Gmj12sziAg==}
+  svelte-migrate@1.4.1:
+    resolution: {integrity: sha512-NmkLyGk2YRxGlySVEmeWFqCeLSRoxr+GKZmOpI/4OZMTF+JUFh2SuclsFPSNAC15so/Lmtc/ho40GsdY4SSE4w==}
     hasBin: true
 
   svelte-preprocess@5.1.4:
@@ -7451,13 +7451,13 @@ snapshots:
     dependencies:
       svelte: 4.2.16
 
-  svelte-migrate@1.4.0:
+  svelte-migrate@1.4.1:
     dependencies:
       import-meta-resolve: 4.1.0
       kleur: 4.1.5
       magic-string: 0.30.10
       prompts: 2.4.2
-      semver: 7.6.0
+      semver: 7.6.2
       tiny-glob: 0.2.9
       ts-morph: 22.0.0
       typescript: 5.4.5
