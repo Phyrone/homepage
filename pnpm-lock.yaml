@@ -22,7 +22,7 @@ importers:
         version: 0.7.2
       '@theatre/studio':
         specifier: ^0.7.0
-        version: 0.7.1(@theatre/core@0.7.2)
+        version: 0.7.2(@theatre/core@0.7.2)
       '@threlte/core':
         specifier: ^7.1.0
         version: 7.3.0(svelte@4.2.17)(three@0.164.1)
@@ -34,7 +34,7 @@ importers:
         version: 1.0.2(svelte@4.2.17)(three@0.164.1)
       '@threlte/theatre':
         specifier: ^2.1.6
-        version: 2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.1(@theatre/core@0.7.2))(@threlte/core@7.3.0(svelte@4.2.17)(three@0.164.1))(@threlte/extras@8.11.2(@types/three@0.164.0)(svelte@4.2.17)(three@0.164.1))(svelte@4.2.17)(three@0.164.1)
+        version: 2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.0(svelte@4.2.17)(three@0.164.1))(@threlte/extras@8.11.2(@types/three@0.164.0)(svelte@4.2.17)(three@0.164.1))(svelte@4.2.17)(three@0.164.1)
       '@types/marked':
         specifier: ^6.0.0
         version: 6.0.0
@@ -1007,14 +1007,11 @@ packages:
   '@theatre/core@0.7.2':
     resolution: {integrity: sha512-IDQa/6WY7mIJAtsSd4EgNcM0IUZkl+FrqZ8DdYiCVTFap9ARDNmrngJOeFjJOsnnaHlc5GdEB/jj7fsjbIrAzQ==}
 
-  '@theatre/dataverse@0.7.1':
-    resolution: {integrity: sha512-cl/uVuXQTYVfcdbBX/GYrZNNpJsvbXEwRaFHUj5zEnyLBuJMO+xCDl9bfRx6Sysdr6HcGJvFuekP0gdmTWK+bA==}
-
   '@theatre/dataverse@0.7.2':
     resolution: {integrity: sha512-YyfoyX7EyhFUY2OM5fsM0LPrs1SdgLwpiTMkkvTIoZLdOwvQhstjYq4Yz/8ZncJlRoTWvakfmgvCaBN+QuBYxg==}
 
-  '@theatre/studio@0.7.1':
-    resolution: {integrity: sha512-e2Of4XRjbq9ytyvYuC3pqn6QYTrOt3dRLTzzUFCMAefIIqbBN/mPUVtZElTDjHbTyNZMTRupRnL9AizAK7Afzw==}
+  '@theatre/studio@0.7.2':
+    resolution: {integrity: sha512-p6LTKzJWVlcHkpGzIlNHh9AkGbB3E+0q9Pjxv+OJoTDe1IK+CMKW695Wp+1//lB4vfC9qShe4z/p+Zaj1q8KtA==}
     peerDependencies:
       '@theatre/core': '*'
 
@@ -4434,18 +4431,14 @@ snapshots:
     dependencies:
       '@theatre/dataverse': 0.7.2
 
-  '@theatre/dataverse@0.7.1':
-    dependencies:
-      lodash-es: 4.17.21
-
   '@theatre/dataverse@0.7.2':
     dependencies:
       lodash-es: 4.17.21
 
-  '@theatre/studio@0.7.1(@theatre/core@0.7.2)':
+  '@theatre/studio@0.7.2(@theatre/core@0.7.2)':
     dependencies:
       '@theatre/core': 0.7.2
-      '@theatre/dataverse': 0.7.1
+      '@theatre/dataverse': 0.7.2
 
   '@threejs-kit/instanced-sprite-mesh@2.4.7(@types/three@0.164.0)(three@0.164.1)':
     dependencies:
@@ -4482,10 +4475,10 @@ snapshots:
       three: 0.164.1
       yoga-layout: 2.0.1
 
-  '@threlte/theatre@2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.1(@theatre/core@0.7.2))(@threlte/core@7.3.0(svelte@4.2.17)(three@0.164.1))(@threlte/extras@8.11.2(@types/three@0.164.0)(svelte@4.2.17)(three@0.164.1))(svelte@4.2.17)(three@0.164.1)':
+  '@threlte/theatre@2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.0(svelte@4.2.17)(three@0.164.1))(@threlte/extras@8.11.2(@types/three@0.164.0)(svelte@4.2.17)(three@0.164.1))(svelte@4.2.17)(three@0.164.1)':
     dependencies:
       '@theatre/core': 0.7.2
-      '@theatre/studio': 0.7.1(@theatre/core@0.7.2)
+      '@theatre/studio': 0.7.2(@theatre/core@0.7.2)
       '@threlte/core': 7.3.0(svelte@4.2.17)(three@0.164.1)
       '@threlte/extras': 8.11.2(@types/three@0.164.0)(svelte@4.2.17)(three@0.164.1)
       svelte: 4.2.17
