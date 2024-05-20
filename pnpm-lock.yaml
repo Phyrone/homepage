@@ -94,7 +94,7 @@ importers:
         version: 10.9.1
       mermaid-isomorphic:
         specifier: ^2.1.2
-        version: 2.2.0
+        version: 2.2.1
       moment:
         specifier: ^2.30.1
         version: 2.30.1
@@ -2436,8 +2436,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  mermaid-isomorphic@2.2.0:
-    resolution: {integrity: sha512-q2o4c4dmovxYltArK/pgwKQrwvtps0vyMG9myg2wfG9z5T4CNa7W0gh3Z91IsGaax9ZRfjPygT2zGGxfjUYFTw==}
+  mermaid-isomorphic@2.2.1:
+    resolution: {integrity: sha512-OPxQsUL2TIlAfC3ExhI/mORzigTbUOqYtqUGUECSKevGCSf/+QEwq78MRZWG1PpmTkl2ORoK8Yy5WkqqTqywMg==}
 
   mermaid@10.9.1:
     resolution: {integrity: sha512-Mx45Obds5W1UkW1nv/7dHRsbfMM1aOKA2+Pxs/IGHNonygDHwmng8xTHyS9z4KWVi0rbko8gjiBmuwwXQ7tiNA==}
@@ -6114,7 +6114,7 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  mermaid-isomorphic@2.2.0:
+  mermaid-isomorphic@2.2.1:
     dependencies:
       '@fortawesome/fontawesome-free': 6.5.2
       mermaid: 10.9.1
