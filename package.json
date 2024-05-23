@@ -107,7 +107,7 @@
     "remark-heading-id": "^1.0.1",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
-    "sitemap": "^7.1.1",
+    "sitemap": "^8.0.0",
     "svelte-adapter-bun": "^0.5.1",
     "svelte-eslint-parser": "^0.36.0",
     "svelte-sonner": "^0.3.22",
