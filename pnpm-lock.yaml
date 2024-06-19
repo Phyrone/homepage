@@ -145,7 +145,7 @@ importers:
         version: 0.3.24(svelte@4.2.18)
       unified:
         specifier: ^11.0.4
-        version: 11.0.4
+        version: 11.0.5
       unified-stream:
         specifier: ^3.0.0
         version: 3.0.0
@@ -3804,8 +3804,8 @@ packages:
   unified-stream@3.0.0:
     resolution: {integrity: sha512-xUSj9ECxGrG1IAAzIuOY5fA4NzY7D5j/2dMDrHgQoPm1Y7fdt+qHS0++RjVPYHaJz9pd1Od8vBRHL5yRV1K2cQ==}
 
-  unified@11.0.4:
-    resolution: {integrity: sha512-apMPnyLjAX+ty4OrNap7yumyVAMlKx5IWU2wlzzUdYJO9A8f1p9m/gywF/GM2ZDFcjQPrx59Mc90KwmxsoklxQ==}
+  unified@11.0.5:
+    resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
 
   unist-util-is@3.0.0:
     resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
@@ -4833,7 +4833,7 @@ snapshots:
 
   '@types/remark-heading-id@1.0.0':
     dependencies:
-      unified: 11.0.4
+      unified: 11.0.5
 
   '@types/resolve@1.20.2': {}
 
@@ -7267,7 +7267,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
       hast-util-from-html: 2.0.1
-      unified: 11.0.4
+      unified: 11.0.5
 
   rehype-preset-minify@7.0.0:
     dependencies:
@@ -7294,7 +7294,7 @@ snapshots:
       rehype-remove-style-type-css: 4.0.0
       rehype-sort-attribute-values: 5.0.0
       rehype-sort-attributes: 5.0.0
-      unified: 11.0.4
+      unified: 11.0.5
 
   rehype-remove-comments@6.0.0:
     dependencies:
@@ -7355,21 +7355,21 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.1
-      unified: 11.0.4
+      unified: 11.0.5
 
   rehype@13.0.1:
     dependencies:
       '@types/hast': 3.0.4
       rehype-parse: 9.0.0
       rehype-stringify: 10.0.0
-      unified: 11.0.4
+      unified: 11.0.5
 
   remark-directive@3.0.0:
     dependencies:
       '@types/mdast': 4.0.3
       mdast-util-directive: 3.0.0
       micromark-extension-directive: 3.0.0
-      unified: 11.0.4
+      unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7379,14 +7379,14 @@ snapshots:
       emoticon: 4.0.1
       mdast-util-find-and-replace: 3.0.1
       node-emoji: 2.1.3
-      unified: 11.0.4
+      unified: 11.0.5
 
   remark-frontmatter@5.0.0:
     dependencies:
       '@types/mdast': 4.0.3
       mdast-util-frontmatter: 2.0.1
       micromark-extension-frontmatter: 2.0.0
-      unified: 11.0.4
+      unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7397,7 +7397,7 @@ snapshots:
       micromark-extension-gfm: 3.0.0
       remark-parse: 11.0.0
       remark-stringify: 11.0.0
-      unified: 11.0.4
+      unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7411,7 +7411,7 @@ snapshots:
       '@types/mdast': 4.0.3
       mdast-util-math: 3.0.0
       micromark-extension-math: 3.0.0
-      unified: 11.0.4
+      unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7420,7 +7420,7 @@ snapshots:
       '@types/mdast': 4.0.3
       mdast-util-from-markdown: 2.0.0
       micromark-util-types: 2.0.0
-      unified: 11.0.4
+      unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7428,14 +7428,14 @@ snapshots:
     dependencies:
       '@types/mdast': 4.0.3
       mdast-util-to-markdown: 2.1.0
-      unified: 11.0.4
+      unified: 11.0.5
 
   remark@15.0.1:
     dependencies:
       '@types/mdast': 4.0.3
       remark-parse: 11.0.0
       remark-stringify: 11.0.0
-      unified: 11.0.4
+      unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7944,10 +7944,10 @@ snapshots:
 
   unified-stream@3.0.0:
     dependencies:
-      unified: 11.0.4
+      unified: 11.0.5
       vfile: 6.0.1
 
-  unified@11.0.4:
+  unified@11.0.5:
     dependencies:
       '@types/unist': 3.0.2
       bail: 2.0.2
