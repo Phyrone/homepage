@@ -28,13 +28,13 @@ importers:
         version: 7.3.1(svelte@4.2.18)(three@0.164.1)
       '@threlte/extras':
         specifier: ^8.8.0
-        version: 8.11.3(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)
+        version: 8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)
       '@threlte/flex':
         specifier: ^1.0.1
         version: 1.0.2(svelte@4.2.18)(three@0.164.1)
       '@threlte/theatre':
         specifier: ^2.1.6
-        version: 2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.3(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)
+        version: 2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)
       '@types/marked':
         specifier: ^6.0.0
         version: 6.0.0
@@ -1170,8 +1170,8 @@ packages:
       svelte: '>=4'
       three: '>=0.152'
 
-  '@threlte/extras@8.11.3':
-    resolution: {integrity: sha512-4KWPmHbWKCsVLZvQOnTamBhxefy5JWwUmkxWTuKnD+e/dwe8Dy6qGIXN3tBtM3XMf1x9u2fhsu8ZkhiGJPbZvA==}
+  '@threlte/extras@8.11.4':
+    resolution: {integrity: sha512-tDjwnEgaR7+zGwbRxYdBH8J63l29DN4gzidFxU3/IaxM4QAh6N8oE3fIBjTMVl/JqxYvaqJ5EYIG0WkOMUVVHA==}
     peerDependencies:
       svelte: '>=4'
       three: '>=0.152'
@@ -4723,7 +4723,7 @@ snapshots:
       svelte: 4.2.18
       three: 0.164.1
 
-  '@threlte/extras@8.11.3(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)':
+  '@threlte/extras@8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)':
     dependencies:
       '@threejs-kit/instanced-sprite-mesh': 2.4.7(@types/three@0.165.0)(three@0.164.1)
       svelte: 4.2.18
@@ -4741,12 +4741,12 @@ snapshots:
       three: 0.164.1
       yoga-layout: 2.0.1
 
-  '@threlte/theatre@2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.3(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)':
+  '@threlte/theatre@2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)':
     dependencies:
       '@theatre/core': 0.7.2
       '@theatre/studio': 0.7.2(@theatre/core@0.7.2)
       '@threlte/core': 7.3.1(svelte@4.2.18)(three@0.164.1)
-      '@threlte/extras': 8.11.3(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)
+      '@threlte/extras': 8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)
       svelte: 4.2.18
       three: 0.164.1
 
