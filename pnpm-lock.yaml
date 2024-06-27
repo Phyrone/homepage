@@ -31,7 +31,7 @@ importers:
         version: 8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)
       '@threlte/flex':
         specifier: ^1.0.1
-        version: 1.0.2(svelte@4.2.18)(three@0.164.1)
+        version: 1.0.3(svelte@4.2.18)(three@0.164.1)
       '@threlte/theatre':
         specifier: ^2.1.6
         version: 2.1.7(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)
@@ -1176,8 +1176,8 @@ packages:
       svelte: '>=4'
       three: '>=0.152'
 
-  '@threlte/flex@1.0.2':
-    resolution: {integrity: sha512-Y87chYdzqhjrWpXaRjmulJX5LXhMLdWjXpR0dIytHg72muvWAbX5csKrBnJFSSMyrxthy2ZUKNrsfvymTqK8Zw==}
+  '@threlte/flex@1.0.3':
+    resolution: {integrity: sha512-PEkHBMAgVk6MUXwNX2R29JtD5do9f8c+mTYLiPR9iYGwoRVzvcYrHqUisAdFD8K+joGysOPz9grM4LlStpyzaA==}
     peerDependencies:
       svelte: '>=4'
       three: '>=0.152'
@@ -4734,7 +4734,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/three'
 
-  '@threlte/flex@1.0.2(svelte@4.2.18)(three@0.164.1)':
+  '@threlte/flex@1.0.3(svelte@4.2.18)(three@0.164.1)':
     dependencies:
       mitt: 3.0.1
       svelte: 4.2.18
