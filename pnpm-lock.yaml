@@ -28,19 +28,19 @@ importers:
         version: 7.3.1(svelte@4.2.18)(three@0.164.1)
       '@threlte/extras':
         specifier: ^8.8.0
-        version: 8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)
+        version: 8.11.4(@types/three@0.166.0)(svelte@4.2.18)(three@0.164.1)
       '@threlte/flex':
         specifier: ^1.0.1
         version: 1.0.3(svelte@4.2.18)(three@0.164.1)
       '@threlte/theatre':
         specifier: ^2.1.6
-        version: 2.1.8(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)
+        version: 2.1.8(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.4(@types/three@0.166.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)
       '@types/marked':
         specifier: ^6.0.0
         version: 6.0.0
       '@types/three':
-        specifier: ^0.165.0
-        version: 0.165.0
+        specifier: ^0.166.0
+        version: 0.166.0
       '@zerodevx/svelte-json-view':
         specifier: ^1.0.9
         version: 1.0.9(svelte@4.2.18)
@@ -1283,8 +1283,8 @@ packages:
   '@types/stats.js@0.17.3':
     resolution: {integrity: sha512-pXNfAD3KHOdif9EQXZ9deK82HVNaXP5ZIF5RP2QG6OQFNTaY2YIetfrE9t528vEreGQvEPRDDc8muaoYeK0SxQ==}
 
-  '@types/three@0.165.0':
-    resolution: {integrity: sha512-AJK8JZAFNBF0kBXiAIl5pggYlzAGGA8geVYQXAcPCEDRbyA+oEjkpUBcJJrtNz6IiALwzGexFJGZG2yV3WsYBw==}
+  '@types/three@0.166.0':
+    resolution: {integrity: sha512-FHMnpcdhdbdOOIYbfkTkUVpYMW53odxbTRwd0/xJpYnTzEsjnVnondGAvHZb4z06UW0vo6WPVuvH0/9qrxKx7g==}
 
   '@types/unist@2.0.10':
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
@@ -4706,11 +4706,11 @@ snapshots:
       '@theatre/core': 0.7.2
       '@theatre/dataverse': 0.7.2
 
-  '@threejs-kit/instanced-sprite-mesh@2.4.7(@types/three@0.165.0)(three@0.164.1)':
+  '@threejs-kit/instanced-sprite-mesh@2.4.7(@types/three@0.166.0)(three@0.164.1)':
     dependencies:
       diet-sprite: 0.0.1
       earcut: 2.2.4
-      maath: 0.10.7(@types/three@0.165.0)(three@0.164.1)
+      maath: 0.10.7(@types/three@0.166.0)(three@0.164.1)
       three: 0.164.1
       three-instanced-uniforms-mesh: 0.49.1(three@0.164.1)
       troika-three-utils: 0.49.0(three@0.164.1)
@@ -4723,9 +4723,9 @@ snapshots:
       svelte: 4.2.18
       three: 0.164.1
 
-  '@threlte/extras@8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)':
+  '@threlte/extras@8.11.4(@types/three@0.166.0)(svelte@4.2.18)(three@0.164.1)':
     dependencies:
-      '@threejs-kit/instanced-sprite-mesh': 2.4.7(@types/three@0.165.0)(three@0.164.1)
+      '@threejs-kit/instanced-sprite-mesh': 2.4.7(@types/three@0.166.0)(three@0.164.1)
       svelte: 4.2.18
       three: 0.164.1
       three-mesh-bvh: 0.7.5(three@0.164.1)
@@ -4741,12 +4741,12 @@ snapshots:
       three: 0.164.1
       yoga-layout: 2.0.1
 
-  '@threlte/theatre@2.1.8(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)':
+  '@threlte/theatre@2.1.8(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.18)(three@0.164.1))(@threlte/extras@8.11.4(@types/three@0.166.0)(svelte@4.2.18)(three@0.164.1))(svelte@4.2.18)(three@0.164.1)':
     dependencies:
       '@theatre/core': 0.7.2
       '@theatre/studio': 0.7.2(@theatre/core@0.7.2)
       '@threlte/core': 7.3.1(svelte@4.2.18)(three@0.164.1)
-      '@threlte/extras': 8.11.4(@types/three@0.165.0)(svelte@4.2.18)(three@0.164.1)
+      '@threlte/extras': 8.11.4(@types/three@0.166.0)(svelte@4.2.18)(three@0.164.1)
       svelte: 4.2.18
       three: 0.164.1
 
@@ -4845,7 +4845,7 @@ snapshots:
 
   '@types/stats.js@0.17.3': {}
 
-  '@types/three@0.165.0':
+  '@types/three@0.166.0':
     dependencies:
       '@tweenjs/tween.js': 23.1.2
       '@types/stats.js': 0.17.3
@@ -6220,9 +6220,9 @@ snapshots:
 
   lz4js@0.2.0: {}
 
-  maath@0.10.7(@types/three@0.165.0)(three@0.164.1):
+  maath@0.10.7(@types/three@0.166.0)(three@0.164.1):
     dependencies:
-      '@types/three': 0.165.0
+      '@types/three': 0.166.0
       three: 0.164.1
 
   magic-string@0.25.9:
