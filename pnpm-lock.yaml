@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@fontsource/bungee-shade':
         specifier: ^5.0.19
-        version: 5.0.20
+        version: 5.0.21
       '@pgrabovets/json-view':
         specifier: ^2.7.5
         version: 2.7.5
@@ -634,8 +634,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fontsource/bungee-shade@5.0.20':
-    resolution: {integrity: sha512-r8bmNAfgg+XsELqbCH0NpDdyZY6/jRkBzfKUGZrNXgK2NiHE5L0mFqEgcLcygQXjsjIdbaDWopvlwORPbCeK/w==}
+  '@fontsource/bungee-shade@5.0.21':
+    resolution: {integrity: sha512-1fY40KzQ8Mq011fR8yMTfUJKyWdyTdSaEWTJ8q/BHgoRewCWUE1c3ky3LnIqF2RAQRp7sJ4h6B2hMm0FttRM+Q==}
 
   '@fortawesome/fontawesome-free@6.5.2':
     resolution: {integrity: sha512-hRILoInAx8GNT5IMkrtIt9blOdrqHOnPBH+k70aWUAqPZPgopb9G5EQJFpaBx/S8zp2fC+mPW349Bziuk1o28Q==}
@@ -3862,8 +3862,8 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  ws@8.17.1:
-    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
+  ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -4138,7 +4138,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fontsource/bungee-shade@5.0.20': {}
+  '@fontsource/bungee-shade@5.0.21': {}
 
   '@fortawesome/fontawesome-free@6.5.2': {}
 
@@ -6610,7 +6610,7 @@ snapshots:
       stoppable: 1.1.0
       undici: 5.28.4
       workerd: 1.20240419.0
-      ws: 8.17.1
+      ws: 8.18.0
       youch: 3.3.3
       zod: 3.23.8
     transitivePeerDependencies:
@@ -7959,7 +7959,7 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  ws@8.17.1: {}
+  ws@8.18.0: {}
 
   xml-js@1.6.11:
     dependencies:
