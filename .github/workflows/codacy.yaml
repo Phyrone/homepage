@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@9c7e404d8f697ff0d9bfac374930356a4834295b
+        uses: codacy/codacy-analysis-cli-action@09916000460adeeedc96b9704f86deba53e2ad5d
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           verbose: true
@@ -29,7 +29,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@9c7e404d8f697ff0d9bfac374930356a4834295b
+        uses: codacy/codacy-analysis-cli-action@09916000460adeeedc96b9704f86deba53e2ad5d
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           verbose: true
