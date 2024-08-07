@@ -115,5 +115,5 @@
     "unified-stream": "^3.0.0",
     "vfile": "^6.0.1"
   },
-  "packageManager": "pnpm@9.6.0"
+  "packageManager": "pnpm@9.7.0"
 }
