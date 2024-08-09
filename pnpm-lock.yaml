@@ -75,8 +75,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       lucide-svelte:
-        specifier: ^0.426.0
-        version: 0.426.0(svelte@4.2.18)
+        specifier: ^0.427.0
+        version: 0.427.0(svelte@4.2.18)
       lz4js:
         specifier: ^0.2.0
         version: 0.2.0
@@ -233,7 +233,7 @@ importers:
         version: 9.0.0
       rollup-plugin-visualizer:
         specifier: ^5.12.0
-        version: 5.12.0(rollup@4.18.0)
+        version: 5.12.0(rollup@3.29.4)
       sass:
         specifier: ^1.69.7
         version: 1.77.8
@@ -266,7 +266,7 @@ importers:
         version: 5.4.0(@types/node@22.1.0)(sass@1.77.8)
       vite-imagetools:
         specifier: ^7.0.0
-        version: 7.0.4(rollup@4.18.0)
+        version: 7.0.4(rollup@3.29.4)
       vitest:
         specifier: ^2.0.0
         version: 2.0.5(@types/node@22.1.0)(sass@1.77.8)
@@ -2444,8 +2444,8 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-svelte@0.426.0:
-    resolution: {integrity: sha512-Gxc8X0ngusFVnXpaJMcO8KBkV1xwl/a+4nbFAjOBSrZrOqrwIY/HduOBXhdjrkCIAqQnMF9ZLBjXBhTdlsuwJw==}
+  lucide-svelte@0.427.0:
+    resolution: {integrity: sha512-l0IJqYVBTxMkJPvZqyIMyVFlbZ18Mjg0n6p7Zo9bSQNvsmeviTyOxYmYdp/G5gXcSHaOGL6YoQW7fmbFklbW/w==}
     peerDependencies:
       svelte: ^3 || ^4 || ^5.0.0-next.42
 
@@ -6085,7 +6085,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-svelte@0.426.0(svelte@4.2.18):
+  lucide-svelte@0.427.0(svelte@4.2.18):
     dependencies:
       svelte: 4.2.18
 
@@ -7327,14 +7327,14 @@ snapshots:
     dependencies:
       rollup-plugin-inject: 3.0.2
 
-  rollup-plugin-visualizer@5.12.0(rollup@4.18.0):
+  rollup-plugin-visualizer@5.12.0(rollup@3.29.4):
     dependencies:
       open: 8.4.2
       picomatch: 2.3.1
       source-map: 0.7.4
       yargs: 17.7.2
     optionalDependencies:
-      rollup: 4.18.0
+      rollup: 3.29.4
 
   rollup-pluginutils@2.8.2:
     dependencies:
@@ -7915,9 +7915,9 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite-imagetools@7.0.4(rollup@4.18.0):
+  vite-imagetools@7.0.4(rollup@3.29.4):
     dependencies:
-      '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
+      '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
       imagetools-core: 7.0.1
       sharp: 0.33.4
     transitivePeerDependencies:
