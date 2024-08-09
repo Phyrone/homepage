@@ -233,7 +233,7 @@ importers:
         version: 9.0.0
       rollup-plugin-visualizer:
         specifier: ^5.12.0
-        version: 5.12.0(rollup@3.29.4)
+        version: 5.12.0(rollup@4.18.0)
       sass:
         specifier: ^1.69.7
         version: 1.77.8
@@ -242,7 +242,7 @@ importers:
         version: 4.2.18
       svelte-adapter-deno:
         specifier: ^0.9.0
-        version: 0.9.0(@sveltejs/kit@2.5.20(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8)))
+        version: 0.9.1(@sveltejs/kit@2.5.20(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8)))
       svelte-check:
         specifier: ^3.6.3
         version: 3.8.5(postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.41)(yaml@2.5.0))(postcss@8.4.41)(sass@1.77.8)(svelte@4.2.18)
@@ -266,7 +266,7 @@ importers:
         version: 5.4.0(@types/node@22.1.0)(sass@1.77.8)
       vite-imagetools:
         specifier: ^7.0.0
-        version: 7.0.4(rollup@3.29.4)
+        version: 7.0.4(rollup@4.18.0)
       vitest:
         specifier: ^2.0.0
         version: 2.0.5(@types/node@22.1.0)(sass@1.77.8)
@@ -3496,10 +3496,10 @@ packages:
   svelte-adapter-bun@0.5.2:
     resolution: {integrity: sha512-xEtFgaal6UgrCwwkSIcapO9kopoFNUYCYqyKCikdqxX9bz2TDYnrWQZ7qBnkunMxi1HOIERUCvTcebYGiarZLA==}
 
-  svelte-adapter-deno@0.9.0:
-    resolution: {integrity: sha512-BIo0tb3BXp9kimM9NQYR9+xqUXKFgMzxS8+5Ly256MoHl8F3ENMFDF0yCCyiqtf3M/LuZwQKq7Ko4PhpQZMUAQ==}
+  svelte-adapter-deno@0.9.1:
+    resolution: {integrity: sha512-oW9hsUPEKNDE7dtcVgFDe6EM/YogSjbcq3abKdaRdcu/meHFGQulgJp/7Jep0pGGA051wIyvq5Ry3yZuWaQc8w==}
     peerDependencies:
-      '@sveltejs/kit': ^1.0.0
+      '@sveltejs/kit': ^2.4.0
 
   svelte-check@3.8.5:
     resolution: {integrity: sha512-3OGGgr9+bJ/+1nbPgsvulkLC48xBsqsgtc8Wam281H4G9F5v3mYGa2bHRsPuwHC5brKl4AxJH95QF73kmfihGQ==}
@@ -7327,14 +7327,14 @@ snapshots:
     dependencies:
       rollup-plugin-inject: 3.0.2
 
-  rollup-plugin-visualizer@5.12.0(rollup@3.29.4):
+  rollup-plugin-visualizer@5.12.0(rollup@4.18.0):
     dependencies:
       open: 8.4.2
       picomatch: 2.3.1
       source-map: 0.7.4
       yargs: 17.7.2
     optionalDependencies:
-      rollup: 3.29.4
+      rollup: 4.18.0
 
   rollup-pluginutils@2.8.2:
     dependencies:
@@ -7570,7 +7570,7 @@ snapshots:
     dependencies:
       tiny-glob: 0.2.9
 
-  svelte-adapter-deno@0.9.0(@sveltejs/kit@2.5.20(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8))):
+  svelte-adapter-deno@0.9.1(@sveltejs/kit@2.5.20(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8))):
     dependencies:
       '@rollup/plugin-commonjs': 24.1.0(rollup@3.29.4)
       '@rollup/plugin-json': 6.1.0(rollup@3.29.4)
@@ -7915,9 +7915,9 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite-imagetools@7.0.4(rollup@3.29.4):
+  vite-imagetools@7.0.4(rollup@4.18.0):
     dependencies:
-      '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
+      '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
       imagetools-core: 7.0.1
       sharp: 0.33.4
     transitivePeerDependencies:
