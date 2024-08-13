@@ -161,7 +161,7 @@ importers:
         version: 3.2.4(@sveltejs/kit@2.5.21(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))
       '@sveltejs/adapter-node':
         specifier: ^5.0.0
-        version: 5.2.1(@sveltejs/kit@2.5.21(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))
+        version: 5.2.2(@sveltejs/kit@2.5.21(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))
       '@sveltejs/adapter-static':
         specifier: ^3.0.1
         version: 3.0.3(@sveltejs/kit@2.5.21(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))
@@ -962,8 +962,8 @@ packages:
       '@sveltejs/kit': ^2.0.0
       wrangler: ^3.28.4
 
-  '@sveltejs/adapter-node@5.2.1':
-    resolution: {integrity: sha512-5vxep+1IN6PKbT5uviKuJelHscmFcK/fiNtgRFIVQ6EzdafnqmpyxHTg6UFg7Z/9w8jNauwOp3VjCgQA+qPDIA==}
+  '@sveltejs/adapter-node@5.2.2':
+    resolution: {integrity: sha512-BCX4zP0cf86TXpmvLQTnnT/tp7P12UMezf+5LwljP1MJC1fFzn9XOXpAHQCyP+pyHGy2K7p5gY0LyLcZFAL02w==}
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
 
@@ -4375,7 +4375,7 @@ snapshots:
       worktop: 0.8.0-next.18
       wrangler: 3.53.1(@cloudflare/workers-types@4.20240806.0)
 
-  '@sveltejs/adapter-node@5.2.1(@sveltejs/kit@2.5.21(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))':
+  '@sveltejs/adapter-node@5.2.2(@sveltejs/kit@2.5.21(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))(svelte@4.2.18)(vite@5.4.0(@types/node@22.2.0)(sass@1.77.8)))':
     dependencies:
       '@rollup/plugin-commonjs': 26.0.1(rollup@4.20.0)
       '@rollup/plugin-json': 6.1.0(rollup@4.20.0)
