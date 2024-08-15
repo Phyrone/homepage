@@ -87,8 +87,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       mdsvex:
-        specifier: ^0.11.0
-        version: 0.11.1(svelte@4.2.18)
+        specifier: ^0.12.0
+        version: 0.12.0(svelte@4.2.18)
       mermaid:
         specifier: ^10.9.0
         version: 10.9.1
@@ -2444,10 +2444,10 @@ packages:
   mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
 
-  mdsvex@0.11.1:
-    resolution: {integrity: sha512-8g1WIKP8AD+KyW6EOSXkEUkxuKL3uX+Tqpv6MUyMFCXvDOb8FDuTFoaOSqi/1CKXVXTLdP/RZU2WS4W9pnuOmA==}
+  mdsvex@0.12.0:
+    resolution: {integrity: sha512-B8QtPpNb/TpTW9uB9MafU59JPfboc4IOxmihTwUrQ07oKNODuXeAvahVohNEr+DLAJfbbI6DNXZglKZVDvuCDw==}
     peerDependencies:
-      svelte: '>=3 <6'
+      svelte: ^3.56.0 || ^4.0.0 || ^5.0.0-next.120
 
   merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -6122,7 +6122,7 @@ snapshots:
 
   mdn-data@2.0.30: {}
 
-  mdsvex@0.11.1(svelte@4.2.18):
+  mdsvex@0.12.0(svelte@4.2.18):
     dependencies:
       '@types/unist': 2.0.10
       prism-svelte: 0.4.7
