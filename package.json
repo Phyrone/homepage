@@ -93,7 +93,7 @@
     "mdast": "^3.0.0",
     "mdast-util-math": "^3.0.0",
     "mdsvex": "^0.12.0",
-    "mermaid": "^10.9.0",
+    "mermaid": "^11.0.0",
     "mermaid-isomorphic": "^2.1.2",
     "moment": "^2.30.1",
     "msgpack-lite": "^0.1.26",
