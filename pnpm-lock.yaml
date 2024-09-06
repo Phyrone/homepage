@@ -91,7 +91,7 @@ importers:
         version: 0.12.3(svelte@4.2.19)
       mermaid:
         specifier: ^11.0.0
-        version: 11.1.0
+        version: 11.1.1
       mermaid-isomorphic:
         specifier: ^2.1.2
         version: 2.2.1
@@ -2607,8 +2607,8 @@ packages:
   mermaid@10.9.1:
     resolution: {integrity: sha512-Mx45Obds5W1UkW1nv/7dHRsbfMM1aOKA2+Pxs/IGHNonygDHwmng8xTHyS9z4KWVi0rbko8gjiBmuwwXQ7tiNA==}
 
-  mermaid@11.1.0:
-    resolution: {integrity: sha512-ICexrwPRzU1USFcpAdrVVGjCwEajD+iAwu2LVHi59D6VbXmFhwfB9TbCL3sA6NBR1tl5qUjQSAOdc9lOKlXnEw==}
+  mermaid@11.1.1:
+    resolution: {integrity: sha512-bdHVu86yrjCkTPRxWHG+B5YucXE8wGaniTnWwhMJe/l253QdX1cuLgYt4ZVvApV1ZXCTsz5ilxoS8KX95U7gdw==}
 
   meshoptimizer@0.18.1:
     resolution: {integrity: sha512-ZhoIoL7TNV4s5B6+rx5mC//fw8/POGyNxS/DZyCJeiZ12ScLfVwRE/GfsxwiTkMYYD5DmK2/JXnEVXqL4rF+Sw==}
@@ -4290,7 +4290,7 @@ snapshots:
       '@antfu/install-pkg': 0.4.1
       '@antfu/utils': 0.7.10
       '@iconify/types': 2.0.0
-      debug: 4.3.6
+      debug: 4.3.7
       kolorist: 1.8.0
       local-pkg: 0.5.0
       mlly: 1.7.1
@@ -6438,7 +6438,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mermaid@11.1.0:
+  mermaid@11.1.1:
     dependencies:
       '@braintree/sanitize-url': 7.1.0
       '@iconify/utils': 2.1.32
@@ -6774,7 +6774,7 @@ snapshots:
   micromark@3.2.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.6
+      debug: 4.3.7
       decode-named-character-reference: 1.0.2
       micromark-core-commonmark: 1.1.0
       micromark-factory-space: 1.1.0
@@ -6796,7 +6796,7 @@ snapshots:
   micromark@4.0.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.6
+      debug: 4.3.7
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.1
