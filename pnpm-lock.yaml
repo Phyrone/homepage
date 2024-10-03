@@ -91,7 +91,7 @@ importers:
         version: 0.12.3(svelte@4.2.19)
       mermaid:
         specifier: ^11.0.0
-        version: 11.2.1
+        version: 11.3.0
       mermaid-isomorphic:
         specifier: ^2.1.2
         version: 2.2.1
@@ -2526,11 +2526,11 @@ packages:
   mermaid-isomorphic@2.2.1:
     resolution: {integrity: sha512-OPxQsUL2TIlAfC3ExhI/mORzigTbUOqYtqUGUECSKevGCSf/+QEwq78MRZWG1PpmTkl2ORoK8Yy5WkqqTqywMg==}
 
-  mermaid@10.9.1:
-    resolution: {integrity: sha512-Mx45Obds5W1UkW1nv/7dHRsbfMM1aOKA2+Pxs/IGHNonygDHwmng8xTHyS9z4KWVi0rbko8gjiBmuwwXQ7tiNA==}
+  mermaid@10.9.2:
+    resolution: {integrity: sha512-UkZyMSuIYcI1Q0H+2pv/5CiY84sOwQ2XlKoDZMl9Y/MtrLEtxQtyA6LWGkMxnZxj0dJqI+7nw51bYjNnrbdFsQ==}
 
-  mermaid@11.2.1:
-    resolution: {integrity: sha512-F8TEaLVVyxTUmvKswVFyOkjPrlJA5h5vNR1f7ZnSWSpqxgEZG1hggtn/QCa7znC28bhlcrNh10qYaIiill7q4A==}
+  mermaid@11.3.0:
+    resolution: {integrity: sha512-fFmf2gRXLtlGzug4wpIGN+rQdZ30M8IZEB1D3eZkXNqC7puhqeURBcD/9tbwXsqBO+A6Nzzo3MSSepmnw5xSeg==}
 
   meshoptimizer@0.18.1:
     resolution: {integrity: sha512-ZhoIoL7TNV4s5B6+rx5mC//fw8/POGyNxS/DZyCJeiZ12ScLfVwRE/GfsxwiTkMYYD5DmK2/JXnEVXqL4rF+Sw==}
@@ -6235,12 +6235,12 @@ snapshots:
   mermaid-isomorphic@2.2.1:
     dependencies:
       '@fortawesome/fontawesome-free': 6.5.2
-      mermaid: 10.9.1
+      mermaid: 10.9.2
       playwright-core: 1.44.0
     transitivePeerDependencies:
       - supports-color
 
-  mermaid@10.9.1:
+  mermaid@10.9.2:
     dependencies:
       '@braintree/sanitize-url': 6.0.4
       '@types/d3-scale': 4.0.8
@@ -6265,7 +6265,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mermaid@11.2.1:
+  mermaid@11.3.0:
     dependencies:
       '@braintree/sanitize-url': 7.1.0
       '@iconify/utils': 2.1.33
