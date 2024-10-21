@@ -248,7 +248,7 @@ importers:
         version: 4.0.5(picomatch@4.0.2)(svelte@4.2.19)(typescript@5.6.3)
       svelte-migrate:
         specifier: ^1.3.6
-        version: 1.6.3
+        version: 1.6.4
       tailwindcss:
         specifier: ^3.3.6
         version: 3.4.14
@@ -3483,8 +3483,8 @@ packages:
     peerDependencies:
       svelte: ^3.19.0 || ^4.0.0
 
-  svelte-migrate@1.6.3:
-    resolution: {integrity: sha512-RnDEuAXtM5ctec+iD+qD7CWmBtvI6pQa2eIQatnJKlFPK38qWSDiaIx324Htl3yNwgj1mG/X7SkT6fCXe1Z3Lw==}
+  svelte-migrate@1.6.4:
+    resolution: {integrity: sha512-Q01m8JOHagNU5pFjIFVit02LreIjT2kMgyLZ0Zmmi6U+Kr03Hl6BT7wXFxb9h1wQj/+wdWseZf6F2GE2omn8pA==}
     hasBin: true
 
   svelte-sonner@0.3.28:
@@ -7398,7 +7398,7 @@ snapshots:
     dependencies:
       svelte: 4.2.19
 
-  svelte-migrate@1.6.3:
+  svelte-migrate@1.6.4:
     dependencies:
       import-meta-resolve: 4.1.0
       kleur: 4.1.5
