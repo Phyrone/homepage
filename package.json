@@ -88,7 +88,7 @@
     "js-yaml": "^4.1.0",
     "kuto": "^0.3.6",
     "localforage": "^1.10.0",
-    "lucide-svelte": "^0.465.0",
+    "lucide-svelte": "^0.468.0",
     "lz4js": "^0.2.0",
     "mdast": "^3.0.0",
     "mdast-util-math": "^3.0.0",
