@@ -248,7 +248,7 @@ importers:
         version: 4.1.1(picomatch@4.0.2)(svelte@4.2.19)(typescript@5.7.2)
       svelte-migrate:
         specifier: ^1.3.6
-        version: 1.6.9
+        version: 1.7.0
       tailwindcss:
         specifier: ^3.3.6
         version: 3.4.16
@@ -2885,14 +2885,11 @@ packages:
   magic-string@0.30.11:
     resolution: {integrity: sha512-+Wri9p0QHMy+545hKww7YAu5NyzF8iomPL/RQazugQ9+Ez4Ic3mERMd8ZTX5rfK944j+560ZJi8iAwgak1Ac7A==}
 
-  magic-string@0.30.12:
-    resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
-
   magic-string@0.30.14:
     resolution: {integrity: sha512-5c99P1WKTed11ZC0HMJOj6CDIue6F8ySu+bJL+85q1zBEIY8IklrJ1eiKC2NDRh3Ct3FcvmJPyQHb9erXMTJNw==}
 
-  magic-string@0.30.15:
-    resolution: {integrity: sha512-zXeaYRgZ6ldS1RJJUrMrYgNJ4fdwnyI6tVqoiIhyCyv5IVTK9BU8Ic2l253GGETQHxI4HNUwhJ3fjDhKqEoaAw==}
+  magic-string@0.30.17:
+    resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
   markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
@@ -3866,8 +3863,8 @@ packages:
     peerDependencies:
       svelte: ^3.19.0 || ^4.0.0
 
-  svelte-migrate@1.6.9:
-    resolution: {integrity: sha512-8vmDMlAntbSTQjlQcJlGX2bNWzwy1OJh4UJJEqmXEWoIYTTcXD4eJ2unNLoSHd/EKSq5kcwAV8e7erkP6TTzZA==}
+  svelte-migrate@1.7.0:
+    resolution: {integrity: sha512-V8VqSsJCSjqzM8UwgqtHLf6oblVdyF4p55tMrpLdv16kwhUsw/EKv3yYlg6E/G+4Ek0zqlyzZ0DKReu2K84Vyg==}
     hasBin: true
 
   svelte-sonner@0.3.28:
@@ -4864,7 +4861,7 @@ snapshots:
       estree-walker: 2.0.2
       fdir: 6.4.2(picomatch@4.0.2)
       is-reference: 1.2.1
-      magic-string: 0.30.15
+      magic-string: 0.30.17
       picomatch: 4.0.2
     optionalDependencies:
       rollup: 4.28.1
@@ -6779,15 +6776,11 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  magic-string@0.30.12:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
-
   magic-string@0.30.14:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  magic-string@0.30.15:
+  magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
@@ -8128,11 +8121,11 @@ snapshots:
     dependencies:
       svelte: 4.2.19
 
-  svelte-migrate@1.6.9:
+  svelte-migrate@1.7.0:
     dependencies:
       import-meta-resolve: 4.1.0
       kleur: 4.1.5
-      magic-string: 0.30.12
+      magic-string: 0.30.17
       prompts: 2.4.2
       semver: 7.6.3
       tiny-glob: 0.2.9
