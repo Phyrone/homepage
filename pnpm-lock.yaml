@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@fontsource/bungee-shade':
         specifier: ^5.0.19
-        version: 5.1.0
+        version: 5.1.1
       '@pgrabovets/json-view':
         specifier: ^2.7.5
         version: 2.7.5
@@ -801,8 +801,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fontsource/bungee-shade@5.1.0':
-    resolution: {integrity: sha512-RP8uAhy+lUuIOm4vSlMBQpFF0C5G05mRaQK1AZ7Y6HmMs3WPYQeXKera3a5VeKANzM91NZoE31edy2WHifuQIQ==}
+  '@fontsource/bungee-shade@5.1.1':
+    resolution: {integrity: sha512-UzebRw2O2kPTQy9qfnswsQMu2SnHpPwpzda00+mAzG2w84ENVdhFeKyVgSW4tJVoySjOoyABEIh/PDu4260DXg==}
 
   '@fortawesome/fontawesome-free@6.5.2':
     resolution: {integrity: sha512-hRILoInAx8GNT5IMkrtIt9blOdrqHOnPBH+k70aWUAqPZPgopb9G5EQJFpaBx/S8zp2fC+mPW349Bziuk1o28Q==}
@@ -4640,7 +4640,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fontsource/bungee-shade@5.1.0': {}
+  '@fontsource/bungee-shade@5.1.1': {}
 
   '@fortawesome/fontawesome-free@6.5.2': {}
 
