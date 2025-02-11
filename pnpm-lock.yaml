@@ -30,8 +30,8 @@ importers:
         specifier: ^8.8.0
         version: 8.12.2(@types/three@0.173.0)(svelte@4.2.19)(three@0.164.1)
       '@threlte/flex':
-        specifier: ^1.0.1
-        version: 1.0.3(svelte@4.2.19)(three@0.164.1)
+        specifier: ^2.0.0
+        version: 2.0.0(svelte@4.2.19)(three@0.164.1)
       '@threlte/theatre':
         specifier: ^2.1.6
         version: 2.1.8(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.19)(three@0.164.1))(@threlte/extras@8.12.2(@types/three@0.173.0)(svelte@4.2.19)(three@0.164.1))(svelte@4.2.19)(three@0.164.1)
@@ -1434,11 +1434,11 @@ packages:
       svelte: '>=4'
       three: '>=0.152'
 
-  '@threlte/flex@1.0.3':
-    resolution: {integrity: sha512-PEkHBMAgVk6MUXwNX2R29JtD5do9f8c+mTYLiPR9iYGwoRVzvcYrHqUisAdFD8K+joGysOPz9grM4LlStpyzaA==}
+  '@threlte/flex@2.0.0':
+    resolution: {integrity: sha512-MoHdUxU+xmjuLieGxMfMECKwoFHZHB+0/84CWfqCFNp5eCV0UyOqEJkRBOTJ1hHPB+thC7uJmZ/UVePAqujwqA==}
     peerDependencies:
-      svelte: '>=4'
-      three: '>=0.152'
+      svelte: '>=5'
+      three: '>=0.155'
 
   '@threlte/theatre@2.1.8':
     resolution: {integrity: sha512-Wi0GYmTa2vxJelDt0rvGzL+xUaQozi7RPNZkpvmIA4hnwqewKoMgwQfCI8Gi3yATvUodtVvFigxEO26H6pwySA==}
@@ -4387,8 +4387,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  yoga-layout@2.0.1:
-    resolution: {integrity: sha512-tT/oChyDXelLo2A+UVnlW9GU7CsvFMaEnd9kVFsaiCQonFAXd3xrHhkLYu+suwwosrAEQ746xBU+HvYtm1Zs2Q==}
+  yoga-layout@3.2.1:
+    resolution: {integrity: sha512-0LPOt3AxKqMdFBZA3HBAt/t/8vIKq7VaQYbuA8WxCgung+p9TVyKRYdpvCb80HcdTN2NkbIKbhNwKUfm3tQywQ==}
 
   youch@3.3.4:
     resolution: {integrity: sha512-UeVBXie8cA35DS6+nBkls68xaBBXCye0CNznrhszZjTbRVnJKQuNsyLKBTTL4ln1o1rh2PKtv35twV7irj5SEg==}
@@ -5282,12 +5282,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/three'
 
-  '@threlte/flex@1.0.3(svelte@4.2.19)(three@0.164.1)':
+  '@threlte/flex@2.0.0(svelte@4.2.19)(three@0.164.1)':
     dependencies:
       mitt: 3.0.1
       svelte: 4.2.19
       three: 0.164.1
-      yoga-layout: 2.0.1
+      yoga-layout: 3.2.1
 
   '@threlte/theatre@2.1.8(@theatre/core@0.7.2)(@theatre/studio@0.7.2(@theatre/core@0.7.2))(@threlte/core@7.3.1(svelte@4.2.19)(three@0.164.1))(@threlte/extras@8.12.2(@types/three@0.173.0)(svelte@4.2.19)(three@0.164.1))(svelte@4.2.19)(three@0.164.1)':
     dependencies:
@@ -8867,7 +8867,7 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  yoga-layout@2.0.1: {}
+  yoga-layout@3.2.1: {}
 
   youch@3.3.4:
     dependencies:
