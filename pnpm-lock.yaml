@@ -157,8 +157,8 @@ importers:
         specifier: ^1.41.0
         version: 1.50.1
       '@sveltejs/adapter-auto':
-        specifier: ^3.1.0
-        version: 3.3.1(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))
+        specifier: ^4.0.0
+        version: 4.0.0(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))
       '@sveltejs/adapter-node':
         specifier: ^5.0.0
         version: 5.2.12(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))
@@ -1351,8 +1351,8 @@ packages:
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
 
-  '@sveltejs/adapter-auto@3.3.1':
-    resolution: {integrity: sha512-5Sc7WAxYdL6q9j/+D0jJKjGREGlfIevDyHSQ2eNETHcB1TKlQWHcAo8AS8H1QdjNvSXpvOwNjykDUHPEAyGgdQ==}
+  '@sveltejs/adapter-auto@4.0.0':
+    resolution: {integrity: sha512-kmuYSQdD2AwThymQF0haQhM8rE5rhutQXG4LNbnbShwhMO4qQGnKaaTy+88DuNSuoQDi58+thpq8XpHc1+oEKQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
@@ -5162,7 +5162,7 @@ snapshots:
 
   '@sindresorhus/is@4.6.0': {}
 
-  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))':
+  '@sveltejs/adapter-auto@4.0.0(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))':
     dependencies:
       '@sveltejs/kit': 2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0))
       import-meta-resolve: 4.1.0
