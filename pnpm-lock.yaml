@@ -164,7 +164,7 @@ importers:
         version: 5.2.12(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))
       '@sveltejs/adapter-static':
         specifier: ^3.0.1
-        version: 3.0.7(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))
+        version: 3.0.8(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))
       '@sveltejs/kit':
         specifier: ^2.3.3
         version: 2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0))
@@ -1367,8 +1367,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
 
-  '@sveltejs/adapter-static@3.0.7':
-    resolution: {integrity: sha512-vSr1BZCJIr6ZAPYTMAfGqLphOSlxywHVSA0Al2rWbCpNP3s0hrGY5O2ysxVx4UkCRItkmLKu67I20cEnEOUxxQ==}
+  '@sveltejs/adapter-static@3.0.8':
+    resolution: {integrity: sha512-YaDrquRpZwfcXbnlDsSrBQNCChVOT9MGuSg+dMAyfsAa1SmiAhrA5jUYUiIMC59G92kIbY/AaQOWcBdq+lh+zg==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
@@ -4396,8 +4396,8 @@ packages:
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
-  zod@3.24.1:
-    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+  zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -5183,7 +5183,7 @@ snapshots:
       '@sveltejs/kit': 2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0))
       rollup: 4.31.0
 
-  '@sveltejs/adapter-static@3.0.7(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))':
+  '@sveltejs/adapter-static@3.0.8(@sveltejs/kit@2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))':
     dependencies:
       '@sveltejs/kit': 2.6.4(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.1)(sass@1.84.0))
 
@@ -7504,7 +7504,7 @@ snapshots:
       workerd: 1.20240419.0
       ws: 8.18.0
       youch: 3.3.4
-      zod: 3.24.1
+      zod: 3.24.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -8877,6 +8877,6 @@ snapshots:
 
   zimmerframe@1.1.2: {}
 
-  zod@3.24.1: {}
+  zod@3.24.2: {}
 
   zwitch@2.0.4: {}
